@@ -7,8 +7,7 @@
         <classes>
             <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
             <class name="org.identifycourses.tests.TC_16_Universities"/>
-           <!-- <class name="org.identifycourses.tests.TC_21_InvalidEmail"/>-->
-
+           <!--<class name="org.identifycourses.tests.TC_21_InvalidEmail"/>-->
         </classes>
 
     </test>
