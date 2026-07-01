@@ -19,11 +19,12 @@ public class BaseTest {
 
         String browser = ConfigReader.getProperty("browser");
 
-        if(browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        }else{
+        } else {
             driver = new EdgeDriver();
         }
+
 
         driver.manage().window().maximize();
         driver.manage().timeouts()
