@@ -2,16 +2,20 @@ package org.identifycourses.tests;
 
 import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
 
-public class TC_25_SubmitButton extends BaseTest {
+import java.time.Duration;
+
+public class TC_24_CorrectEmail extends BaseTest {
     @Test
-    public void validateSubmitButton() {
+    public void validateCorrectdEmail() {
 
         ContactUsPage page = new ContactUsPage(driver);
+
         page.enterFirstName(ConfigReader.getProperty("firstName"));
         page.enterLastName(ConfigReader.getProperty("lastName"));
         page.enterEmail(ConfigReader.getProperty("crtemail"));
@@ -23,22 +27,19 @@ public class TC_25_SubmitButton extends BaseTest {
         page.selectDepartment(ConfigReader.getProperty("department"));
         page.selectJobRole(ConfigReader.getProperty("job_role"));
         page.selectNeeds(ConfigReader.getProperty("needs"));
+
         page.clickSubmit();
 
-        System.out.println("Submit Button Displayed : " + page.isSubmitButtonDisplayed());
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(15));
 
-        System.out.println("Submit Button Enabled : " + page.isSubmitButtonEnabled());
-
-        Assert.assertTrue(
-                page.isSubmitButtonDisplayed(),
-                "Submit button is not displayed");
+        wait.until(ExpectedConditions.urlContains("thank-you"));
+        System.out.println("The form is submitted succesfully and the current URL"+ driver.getCurrentUrl());
 
         Assert.assertTrue(
-                page.isSubmitButtonEnabled(),
-                "Submit button is disabled");
+                driver.getCurrentUrl().contains("thank-you"),
+                "Thank You page is not displayed");
 
 
-
-        System.out.println("Submit Button Clicked Successfully");
     }
 }
