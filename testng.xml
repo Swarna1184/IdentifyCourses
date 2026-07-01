@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Coursera Suite">
+
+    <test name="Search Test">
+
+        <classes>
+            <class name="org.identifycourses.tests.TC_06_BeginnerFilter"/>
+        </classes>
+
+    </test>
+
+</suite>

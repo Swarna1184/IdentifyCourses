@@ -1,4 +1,4 @@
 package org.identifycourses.tests;
 
-public class Tc_23_ErrorMessage {
+public class TC_23_ErrorMessage {
 }
