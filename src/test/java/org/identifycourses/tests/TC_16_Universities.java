@@ -1,5 +1,6 @@
 package org.identifycourses.tests;
 
+import basetest.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.identifycourses.pages.UniversitiesPage;
@@ -11,49 +12,26 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class TC_16_Universities {
+public class TC_16_Universities extends BaseTest {
 
-    WebDriver driver;
-    UniversitiesPage universitiesPage;
-
-   @BeforeMethod
-    public void setUp() {
-        driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
-    }
-
-
-    @Test(priority = 16, description = "TC_16 - Validate navigation to For Universities section")
+    @Test
     public void validateNavigationToForUniversities() {
 
-        universitiesPage = new UniversitiesPage(driver);
+        UniversitiesPage universitiesPage = new UniversitiesPage(driver);
 
-        // Step 1: Open Coursera home page
-        universitiesPage.openCourseraHome();
-        System.out.println(" Coursera home page opened: " + universitiesPage.getCurrentUrl());
-
-        // Step 2: Scroll to footer and click "For Universities" link
         universitiesPage.clickForUniversities();
-
-        // Handle new tab if opened
         universitiesPage.switchToNewWindow();
 
-        // Step 3: Capture URL & title after navigation
         String currentUrl = universitiesPage.getCurrentUrl();
         String pageTitle  = universitiesPage.getPageTitle();
 
         System.out.println("Navigated URL  : " + currentUrl);
         System.out.println("Page Title     : " + pageTitle);
-
-        // Step 4: Validate URL contains 'campus' (For Universities = Coursera for Campus)
         Assert.assertTrue(
                 currentUrl.toLowerCase().contains("campus") || currentUrl.toLowerCase().contains("universities"),
                 "Navigation to 'For Universities' failed. Current URL: " + currentUrl
         );
 
-        // Step 5: Validate page header is displayed
         Assert.assertTrue(
                 universitiesPage.isUniversitiesPageDisplayed(),
                 "'For Universities' page header is not displayed."
