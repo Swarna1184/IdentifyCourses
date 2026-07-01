@@ -1,25 +1,32 @@
 package org.identifycourses.tests;
 
-import org.testng.annotations.Test;
-import org.identifycourses.pages.SearchPage;
 import basetest.BaseTest;
+import org.identifycourses.pages.HomePage;
+import org.identifycourses.pages.SearchPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class TC_06_BeginnerFilter extends BaseTest {
 
-    @Test
-    public void verifyBeginnerFilterCourses() {
+    @Test(description = "TC_006 - Verify filtering section by Beginner level")
+    public void verifyBeginnerFilter() {
 
-        SearchPage searchPage = new SearchPage(driver);
+        // ---------- Search using Pranathi's HomePage methods ----------
+        HomePage homePage = new HomePage(driver);
+        homePage.clickSearchBox();
+        homePage.enterSearchKeyword("Web Development");
+        SearchPage searchPage = homePage.clickSearchIcon();
 
-        // ✅ Step 1: Search course
-        searchPage.searchCourse("Web Development");
+        // ---------- Verify search results loaded ----------
+        Assert.assertTrue(searchPage.areResultsDisplayed(),
+                "Search results were not displayed before applying filter.");
 
-        // ✅ Step 2: Apply Beginner filter
+        // ---------- Apply Beginner filter (teammate's method) ----------
         searchPage.applyBeginnerFilter();
 
-        // ✅ Step 3: Simple confirmation log
-        System.out.println("✅ Beginner filter applied successfully");
-
-        System.out.println("✅ TC_06 PASSED");
+        // ---------- Verify filtered results are visible ----------
+        Assert.assertTrue(searchPage.areResultsDisplayed(),
+                "No results shown after applying Beginner filter.");
+        System.out.println("✅ TC_06 Passed - Beginner filter applied successfully.");
     }
 }
