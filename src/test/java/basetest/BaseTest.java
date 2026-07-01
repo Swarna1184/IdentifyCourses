@@ -1,6 +1,5 @@
 package basetest;
 
-
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -13,21 +12,18 @@ import utilities.ConfigReader;
 
 public class BaseTest {
 
-
     protected WebDriver driver;
 
     @BeforeMethod
     public void setup() {
 
-
         String browser = ConfigReader.getProperty("browser");
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        if(browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        } else {
+        }else{
             driver = new EdgeDriver();
         }
-
 
         driver.manage().window().maximize();
         driver.manage().timeouts()
@@ -44,4 +40,3 @@ public class BaseTest {
 //        }
     }
 }
-

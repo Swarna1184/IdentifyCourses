@@ -21,28 +21,23 @@ public class UniversitiesPage {
         PageFactory.initElements(driver, this);
     }
 
-    // ===== Locators =====
-
-    // Coursera Logo (to confirm home page is loaded)
     @FindBy(xpath = "//a[@aria-label='Coursera']")
     WebElement courseraLogo;
 
-    // "For Universities" link in the footer of Coursera home page
+
     @FindBy(xpath = "//a[normalize-space()='For Universities']")
     WebElement forUniversitiesLink;
 
-    // ===== Action Methods =====
 
-    /** Open Coursera Home page */
+
     public void openCourseraHome() {
         driver.get("https://www.coursera.org/");
         wait.until(ExpectedConditions.visibilityOf(courseraLogo));
     }
 
 
-    /** Click on "For Universities" link */
     public void clickForUniversities() {
-        //scrollToForUniversitiesLink();
+
         wait.until(ExpectedConditions.elementToBeClickable(forUniversitiesLink));
         try {
             forUniversitiesLink.click();
@@ -52,7 +47,6 @@ public class UniversitiesPage {
         }
     }
 
-    /** Switch to newly opened tab/window (Coursera may open it in a new tab) */
     public void switchToNewWindow() {
         String parent = driver.getWindowHandle();
         for (String handle : driver.getWindowHandles()) {
@@ -63,17 +57,13 @@ public class UniversitiesPage {
         }
     }
 
-    /** Get the current URL after navigation */
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-
-    /** Get the page title after navigation */
     public String getPageTitle() {
         return driver.getTitle();
     }
 
-    /** ✅ Verify "For Universities" page is displayed via URL + Title */
     public boolean isUniversitiesPageDisplayed() {
         try {
             // Wait for page to fully load
@@ -83,22 +73,22 @@ public class UniversitiesPage {
             String url   = driver.getCurrentUrl().toLowerCase();
             String title = driver.getTitle().toLowerCase();
 
-            // ✅ Verify by URL
+
             if (url.contains("campus") || url.contains("universities")) {
-                System.out.println("✔ Verified via URL: " + url);
+                System.out.println("Verified via URL: " + url);
                 return true;
             }
 
-            // ✅ Verify by Title
+
             if (title.contains("campus") || title.contains("universities")) {
-                System.out.println("✔ Verified via Title: " + title);
+                System.out.println("Verified via Title: " + title);
                 return true;
             }
 
             return false;
 
         } catch (Exception e) {
-            System.out.println("⚠ Verification failed: " + e.getMessage());
+            System.out.println(" Verification failed: " + e.getMessage());
             return false;
         }
     }
