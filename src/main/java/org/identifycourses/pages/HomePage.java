@@ -28,8 +28,6 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    // ---------- Page Actions ----------
-
     public void clickSearchBox() {
         wait.until(ExpectedConditions.elementToBeClickable(searchBox));
         searchBox.click();
