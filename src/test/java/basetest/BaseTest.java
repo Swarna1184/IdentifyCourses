@@ -1,5 +1,6 @@
 package basetest;
 
+
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -12,10 +13,12 @@ import utilities.ConfigReader;
 
 public class BaseTest {
 
+
     protected WebDriver driver;
 
     @BeforeMethod
     public void setup() {
+
 
         String browser = ConfigReader.getProperty("browser");
 
@@ -41,3 +44,4 @@ public class BaseTest {
 //        }
     }
 }
+

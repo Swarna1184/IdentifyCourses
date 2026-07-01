@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ContactUsPage {
+
     WebDriver driver;
     WebDriverWait wait;
         public ContactUsPage(WebDriver driver) {
@@ -76,4 +77,5 @@ public class ContactUsPage {
             return txtErrorMessage.getText();
 
         }
+
 }
