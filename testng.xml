@@ -1,11 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="IdentifyCoursesSuite">
 
-    <test name="TestCases">
+<suite name="CourseraHackathonSuite">
+
+    <test name="CourseSearchTests">
+
         <classes>
             <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
-            <!-- Add all test classes here -->
+           <!-- <class name="org.identifycourses.tests.TC_21_InvalidEmail"/>-->
         </classes>
+
     </test>
 
 </suite>
