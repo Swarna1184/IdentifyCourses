@@ -29,13 +29,6 @@ public class UniversitiesPage {
     WebElement forUniversitiesLink;
 
 
-
-    public void openCourseraHome() {
-        driver.get("https://www.coursera.org/");
-        wait.until(ExpectedConditions.visibilityOf(courseraLogo));
-    }
-
-
     public void clickForUniversities() {
 
         wait.until(ExpectedConditions.elementToBeClickable(forUniversitiesLink));
