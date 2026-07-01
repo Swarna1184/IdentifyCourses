@@ -17,7 +17,6 @@ public class ContactUsPage {
             PageFactory.initElements(driver, this);
         }
 
-        // Locators
 
         @FindBy(id = "FirstName")
          WebElement txtFirstName;
@@ -65,9 +64,6 @@ public class ContactUsPage {
         }
 
 
-
-
-
         public String getErrorMessage() {
 
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -77,5 +73,4 @@ public class ContactUsPage {
             return txtErrorMessage.getText();
 
         }
-
 }

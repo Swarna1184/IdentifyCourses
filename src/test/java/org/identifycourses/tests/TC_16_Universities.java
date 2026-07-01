@@ -20,7 +20,6 @@ public class TC_16_Universities extends BaseTest {
         UniversitiesPage universitiesPage = new UniversitiesPage(driver);
 
         universitiesPage.clickForUniversities();
-
         universitiesPage.switchToNewWindow();
 
         String currentUrl = universitiesPage.getCurrentUrl();
@@ -28,7 +27,6 @@ public class TC_16_Universities extends BaseTest {
 
         System.out.println("Navigated URL  : " + currentUrl);
         System.out.println("Page Title     : " + pageTitle);
-
         Assert.assertTrue(
                 currentUrl.toLowerCase().contains("campus") || currentUrl.toLowerCase().contains("universities"),
                 "Navigation to 'For Universities' failed. Current URL: " + currentUrl
