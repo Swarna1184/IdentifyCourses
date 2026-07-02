@@ -13,7 +13,6 @@ public class SearchPage {
     WebDriverWait wait;
     JavascriptExecutor js;
 
-
     public SearchPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -56,8 +55,6 @@ public class SearchPage {
     @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
     List<WebElement> ratings;
 
-
-
     private void safeClick(WebElement element) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element)).click();
@@ -66,45 +63,30 @@ public class SearchPage {
         }
     }
 
-
     public void searchCourse(String course) {
-
-
         WebElement box = wait.until(ExpectedConditions.visibilityOf(searchBox));
-
         box.clear();
         box.sendKeys(course);
         box.sendKeys(Keys.ENTER);
-
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
         System.out.println("Search completed");
     }
 
 
     public void applyBeginnerFilter() {
-
-
         js.executeScript("window.scrollBy(0,500)");
-
-
         WebElement filter = wait.until(ExpectedConditions.visibilityOf(filterButton));
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", filter);
         safeClick(filter);
         WebElement level = wait.until(ExpectedConditions.elementToBeClickable(levelDropdown));
         safeClick(level);
         WebElement beginner = wait.until(ExpectedConditions.elementToBeClickable(beginnerCheckbox));
-
         if (!beginner.isSelected()) {
             safeClick(beginner);
         }
-
         WebElement view = wait.until(ExpectedConditions.elementToBeClickable(viewButton));
         safeClick(view);
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
         System.out.println("Beginner filter applied");
     }
 
@@ -114,100 +96,65 @@ public class SearchPage {
     }
 
     public void applyEnglishFilter() {
-
         js.executeScript("window.scrollBy(0,500)");
-
         WebElement filter = wait.until(
                 ExpectedConditions.elementToBeClickable(filterButton));
         safeClick(filter);
-
-
         WebElement language = wait.until(
                 ExpectedConditions.elementToBeClickable(languageDropdown));
         safeClick(language);
-
         WebElement english = wait.until(
                 ExpectedConditions.elementToBeClickable(englishCheckbox));
-
         if (!english.isSelected()) {
             safeClick(english);
         }
         WebElement view = wait.until(
                 ExpectedConditions.elementToBeClickable(viewButton));
         safeClick(view);
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
         System.out.println("English language filter applied");
     }
     public void applyBothFilters() {
-
         js.executeScript("window.scrollBy(0,500)");
-
-        // Open Filter
         safeClick(filterButton);
-
-        // Apply Beginner Level Filter
         safeClick(levelDropdown);
-
         if (!beginnerCheckbox.isSelected()) {
             safeClick(beginnerCheckbox);
         }
-
-        // Apply English Language Filter
         safeClick(languageDropdown);
-
         if (!englishCheckbox.isSelected()) {
             safeClick(englishCheckbox);
         }
-
-        // Apply filters
         safeClick(viewButton);
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
         System.out.println(" Beginner + English filters applied");
     }
 
     public int getCourseCount() {
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
         int count = courseCards.size();
-
         System.out.println("Total courses found: " + count);
-
         return count;
     }
 
-
     public void extractCourseDetails() {
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
         int count = Math.min(2, courseCards.size());
-
         System.out.println("\n===== TOP COURSES =====");
-
         for (int i = 0; i < count; i++) {
-
             String courseName = courseNames.get(i).getText();
-
             String hours = "N/A";
             String rating = "N/A";
-
             try {
                 hours = learningHours.get(i).getText();
             } catch (Exception e) {
                 System.out.println("Hours not found");
             }
-
             try {
                 rating = ratings.get(i).getText();
             } catch (Exception e) {
                 System.out.println("Rating not found");
             }
-
             System.out.println("\nCourse " + (i + 1));
             System.out.println("Name   : " + courseName);
             System.out.println("Hours  : " + hours);

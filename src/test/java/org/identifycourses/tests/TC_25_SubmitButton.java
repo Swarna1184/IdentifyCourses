@@ -24,11 +24,8 @@ public class TC_25_SubmitButton extends BaseTest {
         page.selectJobRole(ConfigReader.getProperty("job_role"));
         page.selectNeeds(ConfigReader.getProperty("needs"));
         page.clickSubmit();
-
         System.out.println("Submit Button Displayed : " + page.isSubmitButtonDisplayed());
-
         System.out.println("Submit Button Enabled : " + page.isSubmitButtonEnabled());
-
         Assert.assertTrue(
                 page.isSubmitButtonDisplayed(),
                 "Submit button is not displayed");
@@ -36,9 +33,6 @@ public class TC_25_SubmitButton extends BaseTest {
         Assert.assertTrue(
                 page.isSubmitButtonEnabled(),
                 "Submit button is disabled");
-
-
-
         System.out.println("Submit Button Clicked Successfully");
     }
 }

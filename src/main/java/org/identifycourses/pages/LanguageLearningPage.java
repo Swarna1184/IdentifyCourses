@@ -17,7 +17,6 @@ import java.util.List;
 public class LanguageLearningPage {
 
     WebDriver driver;
-
     public LanguageLearningPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -35,7 +34,6 @@ public class LanguageLearningPage {
     @FindBy(xpath = "//h3[text()='Language']/following::button[contains(text(),'Show')]")
     WebElement showMoreLanguages;
     public void openLanguageLearning() {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(languageLearningOption));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -47,7 +45,6 @@ public class LanguageLearningPage {
     }
 
     public void closePopupIfPresent() {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         try {
             System.out.println("Waiting for popup...");
