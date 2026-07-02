@@ -92,6 +92,8 @@ public class ContactUsPage {
         }
 
 
+        public String getErrorMessage() {
+
         public void selectNeeds(String needs) {
             Select select = new Select(drpNeeds);
             select.selectByVisibleText(needs.trim());
