@@ -16,7 +16,6 @@ public class TC_16_Universities extends BaseTest {
 
     @Test
     public void validateNavigationToForUniversities() {
-
         UniversitiesPage universitiesPage = new UniversitiesPage(driver);
         universitiesPage.clickForUniversities();
         universitiesPage.switchToNewWindow();

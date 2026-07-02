@@ -11,22 +11,16 @@ import java.time.Duration;
 
 public class TC_05_SearchSpecial extends BaseTest {
 
-    @Test(description = "TC_005: Verify search with only special characters")
+    @Test
     public void searchSpecialCharacters() {
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("@#$%^&*");
         home.clickSearchIcon();
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        // Wait for page to finish loading (proves system responded)
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
-
         String currentUrl = driver.getCurrentUrl();
         System.out.println("Current URL after special-char search: " + currentUrl);
-
-        // Verify system did not crash — still on Coursera
         Assert.assertTrue(currentUrl.contains("coursera.org"),
                 "System should remain on Coursera without crashing after special-character search.");
     }
