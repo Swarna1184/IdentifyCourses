@@ -13,7 +13,7 @@ public class SearchPage {
     WebDriverWait wait;
     JavascriptExecutor js;
 
-    // ✅ Constructor
+
     public SearchPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -21,8 +21,6 @@ public class SearchPage {
 
         PageFactory.initElements(driver, this);
     }
-
-    // ✅ LOCATORS
 
     @FindBy(xpath = "//input[@type='search' or @type='text']")
     WebElement searchBox;
@@ -49,7 +47,17 @@ public class SearchPage {
     WebElement englishCheckbox;
 
 
-    // ✅ SAFE CLICK
+    @FindBy(xpath = "//h3")
+    List<WebElement> courseNames;
+
+    @FindBy(xpath = "//*[contains(text(),'hours')]")
+    List<WebElement> learningHours;
+
+    @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
+    List<WebElement> ratings;
+
+
+
     private void safeClick(WebElement element) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element)).click();
@@ -58,52 +66,46 @@ public class SearchPage {
         }
     }
 
-    // ✅ SEARCH FUNCTION (IMPORTANT ✅)
+
     public void searchCourse(String course) {
 
-        // ✅ Wait until search box visible
+
         WebElement box = wait.until(ExpectedConditions.visibilityOf(searchBox));
 
         box.clear();
         box.sendKeys(course);
         box.sendKeys(Keys.ENTER);
 
-        // ✅ Wait for results
+
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
 
-        System.out.println("✅ Search completed");
+        System.out.println("Search completed");
     }
 
-    // ✅ APPLY BEGINNER FILTER
+
     public void applyBeginnerFilter() {
 
-        // ✅ scroll little
+
         js.executeScript("window.scrollBy(0,500)");
 
-        // ✅ Filter button
+
         WebElement filter = wait.until(ExpectedConditions.visibilityOf(filterButton));
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", filter);
         safeClick(filter);
-
-        // ✅ Level dropdown
         WebElement level = wait.until(ExpectedConditions.elementToBeClickable(levelDropdown));
         safeClick(level);
-
-        // ✅ Beginner checkbox
         WebElement beginner = wait.until(ExpectedConditions.elementToBeClickable(beginnerCheckbox));
 
         if (!beginner.isSelected()) {
             safeClick(beginner);
         }
 
-        // ✅ View button
         WebElement view = wait.until(ExpectedConditions.elementToBeClickable(viewButton));
         safeClick(view);
 
-        // ✅ Wait for results reload
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
 
-        System.out.println("✅ Beginner filter applied");
+        System.out.println("Beginner filter applied");
     }
 
 
@@ -115,31 +117,101 @@ public class SearchPage {
 
         js.executeScript("window.scrollBy(0,500)");
 
-        // Filter button
         WebElement filter = wait.until(
                 ExpectedConditions.elementToBeClickable(filterButton));
         safeClick(filter);
 
-        // Language dropdown
+
         WebElement language = wait.until(
                 ExpectedConditions.elementToBeClickable(languageDropdown));
         safeClick(language);
 
-        // English checkbox
         WebElement english = wait.until(
                 ExpectedConditions.elementToBeClickable(englishCheckbox));
 
         if (!english.isSelected()) {
             safeClick(english);
         }
-
-        // View button
         WebElement view = wait.until(
                 ExpectedConditions.elementToBeClickable(viewButton));
         safeClick(view);
 
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
 
-        System.out.println("✅ English language filter applied");
+        System.out.println("English language filter applied");
+    }
+    public void applyBothFilters() {
+
+        js.executeScript("window.scrollBy(0,500)");
+
+        // Open Filter
+        safeClick(filterButton);
+
+        // Apply Beginner Level Filter
+        safeClick(levelDropdown);
+
+        if (!beginnerCheckbox.isSelected()) {
+            safeClick(beginnerCheckbox);
+        }
+
+        // Apply English Language Filter
+        safeClick(languageDropdown);
+
+        if (!englishCheckbox.isSelected()) {
+            safeClick(englishCheckbox);
+        }
+
+        // Apply filters
+        safeClick(viewButton);
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+
+        System.out.println(" Beginner + English filters applied");
+    }
+
+    public int getCourseCount() {
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+
+        int count = courseCards.size();
+
+        System.out.println("Total courses found: " + count);
+
+        return count;
+    }
+
+
+    public void extractCourseDetails() {
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+
+        int count = Math.min(2, courseCards.size());
+
+        System.out.println("\n===== TOP COURSES =====");
+
+        for (int i = 0; i < count; i++) {
+
+            String courseName = courseNames.get(i).getText();
+
+            String hours = "N/A";
+            String rating = "N/A";
+
+            try {
+                hours = learningHours.get(i).getText();
+            } catch (Exception e) {
+                System.out.println("Hours not found");
+            }
+
+            try {
+                rating = ratings.get(i).getText();
+            } catch (Exception e) {
+                System.out.println("Rating not found");
+            }
+
+            System.out.println("\nCourse " + (i + 1));
+            System.out.println("Name   : " + courseName);
+            System.out.println("Hours  : " + hours);
+            System.out.println("Rating : " + rating);
+        }
     }
 }
