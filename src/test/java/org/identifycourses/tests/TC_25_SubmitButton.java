@@ -2,13 +2,17 @@ package org.identifycourses.tests;
 
 import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
 
+import java.io.IOException;
+
 public class TC_25_SubmitButton extends BaseTest {
     @Test
-    public void validateSubmitButton() {
+    public void validateSubmitButton() throws IOException {
+
         ContactUsPage page = new ContactUsPage(driver);
         page.enterFirstName(ConfigReader.getProperty("firstName"));
         page.enterLastName(ConfigReader.getProperty("lastName"));
@@ -24,9 +28,11 @@ public class TC_25_SubmitButton extends BaseTest {
         page.clickSubmit();
         System.out.println("Submit Button Displayed : " + page.isSubmitButtonDisplayed());
         System.out.println("Submit Button Enabled : " + page.isSubmitButtonEnabled());
+        BaseTest.takeScreenShot(driver, "SubmitButton");
         Assert.assertTrue(
                 page.isSubmitButtonDisplayed(),
                 "Submit button is not displayed");
+
         Assert.assertTrue(
                 page.isSubmitButtonEnabled(),
                 "Submit button is disabled");

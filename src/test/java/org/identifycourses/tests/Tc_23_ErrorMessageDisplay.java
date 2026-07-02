@@ -1,13 +1,19 @@
 package org.identifycourses.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
 import utilities.ConfigReader;
+
+import java.io.IOException;
+
 public class Tc_23_ErrorMessageDisplay extends  BaseTest{
 
+
         @Test
-        public void validateErrorMessageDisplay() {
+        public void validateErrorMessageDisplay() throws IOException {
+
             ContactUsPage page = new ContactUsPage(driver);
             page.enterFirstName(ConfigReader.getProperty("firstName"));
             page.enterLastName(ConfigReader.getProperty("lastName"));
@@ -24,9 +30,12 @@ public class Tc_23_ErrorMessageDisplay extends  BaseTest{
             String actualError = page.getErrorMessage();
             System.out.println("Displayed Error Message: "
                     + actualError);
+            BaseTest.takeScreenShot(driver, "ErrorMessage");
             Assert.assertEquals(
                     actualError,
                     "Please enter your work email address",
                     "Incorrect error message displayed");
         }
+
+
 }
