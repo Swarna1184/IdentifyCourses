@@ -1,11 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Coursera Suite">
+<suite name="CourseraHackathonSuite">
 
-    <test name="Search Test">
+    <test name="CourseSearchTests">
 
         <classes>
-            <class name="org.identifycourses.tests.TC_06_BeginnerFilter"/>
+            <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
+            <class name="org.identifycourses.tests.TC_16_Universities"/>
+           <!--<class name="org.identifycourses.tests.TC_21_InvalidEmail"/>-->
         </classes>
 
     </test>

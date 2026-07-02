@@ -1,94 +1,145 @@
 package org.identifycourses.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 import java.util.List;
 
 public class SearchPage {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private JavascriptExecutor js;
+    WebDriver driver;
+    WebDriverWait wait;
+    JavascriptExecutor js;
 
-    // ==================== PAGE FACTORY ELEMENTS ====================
-
-    // ---------- Course result cards (Pranathi - TC_01) ----------
-    @FindAll({
-            @FindBy(css = "div.cds-ProductCard-content"),
-            @FindBy(css = "li.cds-9"),
-            @FindBy(css = "div[data-testid='product-card']"),
-            @FindBy(css = "a[data-click-key*='search.search.click.search_result']")
-    })
-    private List<WebElement> courseCards;
-
-    // ---------- Filter locators (Teammate - Beginner filter) ----------
-    private By filterButton     = By.xpath("//button[contains(.,'Filter')]");
-    private By levelDropdown    = By.xpath("//span[contains(text(),'Level')]");
-    private By beginnerCheckbox = By.xpath("//input[@type='checkbox']/ancestor::label[contains(.,'Beginner')]");
-    private By viewButton       = By.xpath("//button[contains(.,'View')]");
-
-    // ==================== CONSTRUCTOR ====================
-
+    // ✅ Constructor
     public SearchPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.js = (JavascriptExecutor) driver;
+
         PageFactory.initElements(driver, this);
     }
 
-    // ==================== ACTIONS: PRANATHI (TC_01) ====================
+    // ✅ LOCATORS
 
-    /** Verifies whether search results (course cards) are visible on the page */
-    public boolean areResultsDisplayed() {
+    @FindBy(xpath = "//input[@type='search' or @type='text']")
+    WebElement searchBox;
+
+    @FindBy(xpath = "//button[contains(.,'Filter')]")
+    WebElement filterButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Level')]")
+    WebElement levelDropdown;
+
+    @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'Beginner')]")
+    WebElement beginnerCheckbox;
+
+    @FindBy(xpath = "//button[contains(.,'View')]")
+    WebElement viewButton;
+
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
+    List<WebElement> courseCards;
+
+   @FindBy(xpath = "//span[contains(text(),'Language')]")
+    WebElement languageDropdown;
+
+    @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
+    WebElement englishCheckbox;
+
+
+    // ✅ SAFE CLICK
+    private void safeClick(WebElement element) {
         try {
-            wait.until(ExpectedConditions.urlContains("search"));
-            wait.until(d -> !courseCards.isEmpty());
-            return !courseCards.isEmpty();
+            wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         } catch (Exception e) {
-            return driver.getCurrentUrl().toLowerCase().contains("search");
+            js.executeScript("arguments[0].click();", element);
         }
     }
 
-    /** Returns total number of course cards displayed */
-    public int getResultsCount() {
-        return courseCards.size();
+    // ✅ SEARCH FUNCTION (IMPORTANT ✅)
+    public void searchCourse(String course) {
+
+        // ✅ Wait until search box visible
+        WebElement box = wait.until(ExpectedConditions.visibilityOf(searchBox));
+
+        box.clear();
+        box.sendKeys(course);
+        box.sendKeys(Keys.ENTER);
+
+        // ✅ Wait for results
+        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+
+        System.out.println("✅ Search completed");
     }
 
-    /** Returns current browser URL */
-    public String getCurrentUrl() {
-        return driver.getCurrentUrl();
-    }
-
-    // ==================== ACTIONS: TEAMMATE (Beginner Filter) ====================
-
-    /** Applies the "Beginner" level filter on the search results page */
+    // ✅ APPLY BEGINNER FILTER
     public void applyBeginnerFilter() {
-        // Click Filter button
-        WebElement filter = wait.until(ExpectedConditions.elementToBeClickable(filterButton));
-        js.executeScript("arguments[0].click();", filter);
 
-        // Expand Level dropdown
+        // ✅ scroll little
+        js.executeScript("window.scrollBy(0,500)");
+
+        // ✅ Filter button
+        WebElement filter = wait.until(ExpectedConditions.visibilityOf(filterButton));
+        js.executeScript("arguments[0].scrollIntoView({block:'center'});", filter);
+        safeClick(filter);
+
+        // ✅ Level dropdown
         WebElement level = wait.until(ExpectedConditions.elementToBeClickable(levelDropdown));
-        js.executeScript("arguments[0].scrollIntoView(true);", level);
-        js.executeScript("arguments[0].click();", level);
+        safeClick(level);
 
-        // Select Beginner checkbox
+        // ✅ Beginner checkbox
         WebElement beginner = wait.until(ExpectedConditions.elementToBeClickable(beginnerCheckbox));
-        js.executeScript("arguments[0].click();", beginner);
 
-        // Click View to apply filter
+        if (!beginner.isSelected()) {
+            safeClick(beginner);
+        }
+
+        // ✅ View button
         WebElement view = wait.until(ExpectedConditions.elementToBeClickable(viewButton));
-        js.executeScript("arguments[0].click();", view);
+        safeClick(view);
 
-        System.out.println("✅ Beginner filter applied successfully");
+        // ✅ Wait for results reload
+        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+
+        System.out.println("✅ Beginner filter applied");
+    }
+
+
+    public boolean areResultsDisplayed() {
+        return courseCards.size() > 0;
+    }
+
+    public void applyEnglishFilter() {
+
+        js.executeScript("window.scrollBy(0,500)");
+
+        // Filter button
+        WebElement filter = wait.until(
+                ExpectedConditions.elementToBeClickable(filterButton));
+        safeClick(filter);
+
+        // Language dropdown
+        WebElement language = wait.until(
+                ExpectedConditions.elementToBeClickable(languageDropdown));
+        safeClick(language);
+
+        // English checkbox
+        WebElement english = wait.until(
+                ExpectedConditions.elementToBeClickable(englishCheckbox));
+
+        if (!english.isSelected()) {
+            safeClick(english);
+        }
+
+        // View button
+        WebElement view = wait.until(
+                ExpectedConditions.elementToBeClickable(viewButton));
+        safeClick(view);
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+
+        System.out.println("✅ English language filter applied");
     }
 }
