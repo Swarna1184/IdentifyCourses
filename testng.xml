@@ -7,8 +7,12 @@
         <classes>
             <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
             <class name="org.identifycourses.tests.TC_12_GetLanguages"/>
-            <!--<class name="org.identifycourses.tests.TC_16_Universities"/>
-           <class name="org.identifycourses.tests.TC_21_InvalidEmail"/>-->
+            <class name="org.identifycourses.tests.TC_16_Universities"/>
+          <!--<class name="org.identifycourses.tests.TC_21_InvalidEmail"/>
+           <class name="org.identifycourses.tests.TC_22_EmptyEmail"/>
+            <class name="org.identifycourses.tests.Tc_23_ErrorMessageDisplay"/>
+            <class name="org.identifycourses.tests.TC_24_CorrectEmail"/>
+            <class name="org.identifycourses.tests.TC_25_SubmitButton"/>-->
         </classes>
 
     </test>
