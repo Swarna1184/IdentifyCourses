@@ -37,7 +37,7 @@ public class HomePage {
     }
 
     public SearchPage clickSearchIcon() {
-        // Press ENTER inside search box — equivalent to clicking the search icon
+
         searchBox.sendKeys(Keys.ENTER);
         return new SearchPage(driver);
     }

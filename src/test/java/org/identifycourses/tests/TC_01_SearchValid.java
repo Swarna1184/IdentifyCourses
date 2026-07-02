@@ -8,21 +8,16 @@ import org.testng.annotations.Test;
 
 public class TC_01_SearchValid extends BaseTest {
 
-    @Test(description = "TC_001: Verify search results for a valid keyword")
+    @Test
     public void searchValidKeyword() {
         HomePage home = new HomePage(driver);
         // Step 1: URL already opened in BaseTest
         // Step 2: Click search box
         home.clickSearchBox();
-
-        // Step 3: Enter valid keyword
         home.enterSearchKeyword("Web Development");
-
-        // Step 4: Click search icon (ENTER)
         SearchPage search = home.clickSearchIcon();
         boolean resultsDisplayed = search.areResultsDisplayed();
         int count = search.getCourseCount();
-
         System.out.println("Total courses for 'Web Development': " + count);
         Assert.assertTrue(resultsDisplayed,
                 "Expected search results but none were displayed.");

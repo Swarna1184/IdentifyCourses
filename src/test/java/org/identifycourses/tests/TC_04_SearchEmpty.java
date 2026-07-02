@@ -13,7 +13,6 @@ public class TC_04_SearchEmpty extends BaseTest {
 
     @Test(description = "TC_004: Verify search with empty input field")
     public void searchEmptyKeyword() {
-
         HomePage home = new HomePage(driver);
 
         // Wait until home page fully loads before capturing initial URL
@@ -21,7 +20,6 @@ public class TC_04_SearchEmpty extends BaseTest {
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
 
         String originalUrl = driver.getCurrentUrl();
-
         home.clickSearchBox();
         home.enterSearchKeyword("");   // no input
         home.clickSearchIcon();        // press ENTER on empty search box

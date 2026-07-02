@@ -1,19 +1,20 @@
 package org.identifycourses.tests;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 import utilities.ConfigReader;
+public class Tc_23_ErrorMessageDisplay extends  BaseTest{
 
-public class TC_22_EmptyEmail extends BaseTest {
 
         @Test
-        public void validateEmptyEmail() {
+        public void validateErrorMessageDisplay() {
+
             ContactUsPage page = new ContactUsPage(driver);
             page.enterFirstName(ConfigReader.getProperty("firstName"));
             page.enterLastName(ConfigReader.getProperty("lastName"));
-            page.enterEmail("");
+            page.enterEmail(ConfigReader.getProperty("email"));
             page.enterPhone(ConfigReader.getProperty("phoneNumber"));
             page.enterInstitutionName(ConfigReader.getProperty("institutionName"));
             page.selectCountry(ConfigReader.getProperty("country"));
@@ -24,10 +25,13 @@ public class TC_22_EmptyEmail extends BaseTest {
             page.selectNeeds(ConfigReader.getProperty("needs"));
             page.clickSubmit();
             String actualError = page.getErrorMessage();
-            System.out.println("Validation Error: " + actualError);
-            Assert.assertTrue(
-                    actualError.length() > 0,
-                    "Validation message was not displayed");
+            System.out.println("Displayed Error Message: "
+                    + actualError);
+            Assert.assertEquals(
+                    actualError,
+                    "Please enter your work email address",
+                    "Incorrect error message displayed");
         }
+
 
 }

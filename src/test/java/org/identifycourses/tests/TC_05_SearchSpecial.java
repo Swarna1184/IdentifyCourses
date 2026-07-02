@@ -13,9 +13,7 @@ public class TC_05_SearchSpecial extends BaseTest {
 
     @Test(description = "TC_005: Verify search with only special characters")
     public void searchSpecialCharacters() {
-
         HomePage home = new HomePage(driver);
-
         home.clickSearchBox();
         home.enterSearchKeyword("@#$%^&*");
         home.clickSearchIcon();

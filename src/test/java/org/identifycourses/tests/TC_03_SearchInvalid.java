@@ -14,9 +14,7 @@ public class TC_03_SearchInvalid extends BaseTest {
 
     @Test(description = "TC_003: Verify system behavior with text + special characters")
     public void searchInvalidKeyword() {
-
         HomePage home = new HomePage(driver);
-
         home.clickSearchBox();
         home.enterSearchKeyword("Web@#Development$$");
         home.clickSearchIcon();
