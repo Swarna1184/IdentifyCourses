@@ -1,19 +1,24 @@
 package org.identifycourses.tests;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
 import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import utilities.ConfigReader;
 
-public class TC_21_InvalidEmail extends BaseTest {
+import java.time.Duration;
 
+public class TC_24_CorrectEmail extends BaseTest {
     @Test
-    public void validateInvalidEmail() {
+    public void validateCorrectdEmail() {
+
         ContactUsPage page = new ContactUsPage(driver);
+
         page.enterFirstName(ConfigReader.getProperty("firstName"));
         page.enterLastName(ConfigReader.getProperty("lastName"));
-        page.enterEmail(ConfigReader.getProperty("email"));
+        page.enterEmail(ConfigReader.getProperty("crtemail"));
         page.enterPhone(ConfigReader.getProperty("phoneNumber"));
         page.enterInstitutionName(ConfigReader.getProperty("institutionName"));
         page.selectCountry(ConfigReader.getProperty("country"));
@@ -23,10 +28,14 @@ public class TC_21_InvalidEmail extends BaseTest {
         page.selectJobRole(ConfigReader.getProperty("job_role"));
         page.selectNeeds(ConfigReader.getProperty("needs"));
         page.clickSubmit();
-        String actualError = page.getErrorMessage();
-        System.out.println("Validation Error : " + actualError);
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.urlContains("thank-you"));
+        System.out.println("The form is submitted succesfully and the current URL"+ driver.getCurrentUrl());
         Assert.assertTrue(
-                actualError.contains("Please enter your work email address"),
-                "Email validation message not displayed");
+                driver.getCurrentUrl().contains("thank-you"),
+                "Thank You page is not displayed");
+
+
     }
 }
