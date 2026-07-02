@@ -17,7 +17,10 @@
             <class name="org.identifycourses.tests.TC_09_ValidateCourses"/>
             <class name="org.identifycourses.tests.TC_10_ExtractDetails"/>
             <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
-            <class name="org.identifycourses.tests.TC_12_GetLanguages"/>
+            <class name="org.identifycourses.tests.TC_12_CountLanguages"/>
+            <class name="org.identifycourses.tests.TC_13_GetLanguages"/>
+            <class name="org.identifycourses.tests.TC_14_CountLevels"/>
+            <class name="org.identifycourses.tests.TC_15_GetLevels"/>
             <class name="org.identifycourses.tests.TC_16_Universities"/>
             <!--<class name="org.identifycourses.tests.TC_21_InvalidEmail"/>
             <class name="org.identifycourses.tests.TC_22_EmptyEmail"/>

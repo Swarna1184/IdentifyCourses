@@ -9,7 +9,6 @@ import utilities.ConfigReader;
 import java.io.IOException;
 
 public class TC_21_InvalidEmail extends BaseTest {
-
     @Test
     public void validateInvalidEmail() throws IOException {
         ContactUsPage page = new ContactUsPage(driver);
