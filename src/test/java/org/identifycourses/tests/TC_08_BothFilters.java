@@ -5,10 +5,12 @@ import org.testng.annotations.Test;
 import basetest.BaseTest;
 import org.identifycourses.pages.SearchPage;
 
+import java.io.IOException;
+
 public class TC_08_BothFilters extends BaseTest {
 
     @Test
-    public void verifyBeginnerAndEnglishCourses() {
+    public void verifyBeginnerAndEnglishCourses() throws IOException {
 
         SearchPage searchPage = new SearchPage(driver);
         searchPage.searchCourse("Web Development");
@@ -21,6 +23,7 @@ public class TC_08_BothFilters extends BaseTest {
                 searchPage.areResultsDisplayed(),
                 "Beginner + English filtered results not displayed"
         );
+        BaseTest.takeScreenShot(driver, "BothFilter");
         System.out.println("TC_08 PASSED");
     }
 }
