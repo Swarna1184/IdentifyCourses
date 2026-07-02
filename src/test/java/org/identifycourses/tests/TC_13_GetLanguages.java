@@ -11,25 +11,16 @@ public class TC_13_GetLanguages extends BaseTest {
 
     @Test
     public void extractLanguages() {
-
-        LanguageLearningPage langPage =
-                new LanguageLearningPage(driver);
-
+        LanguageLearningPage langPage = new LanguageLearningPage(driver);
         langPage.navigateToLanguageLearning();
         langPage.closePopupIfPresent();
-
         String url = driver.getCurrentUrl();
         System.out.println("Current URL: " + url);
-
-        List<String> languages =
-                langPage.getLanguages();
-
+        List<String> languages = langPage.getLanguages();
         System.out.println("Languages Found: " + languages);
-
         Assert.assertFalse(
                 languages.isEmpty(),
                 "Languages list is EMPTY! Extraction Failed");
-
         ExcelUtils.writeLanguagesToExcel(languages);
     }
 }
