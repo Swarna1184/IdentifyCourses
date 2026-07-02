@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 public class HomePage {
@@ -16,7 +17,6 @@ public class HomePage {
 
     @FindBy(css = "input[data-testid='HeaderSearchInput'], input[name='query'], input[placeholder*='Search'], input[aria-label*='Search']")
     private WebElement searchBox;
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -34,6 +34,7 @@ public class HomePage {
     }
 
     public SearchPage clickSearchIcon() {
+
         searchBox.sendKeys(Keys.ENTER);
         return new SearchPage(driver);
     }
