@@ -13,9 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import utilities.ConfigReader;
 
 public class BaseTest {
-
     protected WebDriver driver;
-
     @BeforeClass
     public void setup() {
         String browser = ConfigReader.getProperty("browser");
@@ -32,7 +30,6 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown() {
-
 //        if(driver != null) {
 //            //driver.quit();
 //        }

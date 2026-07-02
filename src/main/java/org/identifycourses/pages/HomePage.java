@@ -14,12 +14,10 @@ public class HomePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    // ---------- Page Factory Elements ----------
 
     @FindBy(css = "input[data-testid='HeaderSearchInput'], input[name='query'], input[placeholder*='Search'], input[aria-label*='Search']")
     private WebElement searchBox;
 
-    // ---------- Constructor ----------
     public HomePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
