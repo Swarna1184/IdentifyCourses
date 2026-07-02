@@ -15,13 +15,8 @@ public class HomePage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // ---------- Page Factory Elements ----------
-
     @FindBy(css = "input[data-testid='HeaderSearchInput'], input[name='query'], input[placeholder*='Search'], input[aria-label*='Search']")
     private WebElement searchBox;
-
-    // ---------- Constructor ----------
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -39,7 +34,7 @@ public class HomePage {
     }
 
     public SearchPage clickSearchIcon() {
-        // Press ENTER inside search box — equivalent to clicking the search icon
+
         searchBox.sendKeys(Keys.ENTER);
         return new SearchPage(driver);
     }

@@ -27,15 +27,11 @@ public class TC_24_CorrectEmail extends BaseTest {
         page.selectDepartment(ConfigReader.getProperty("department"));
         page.selectJobRole(ConfigReader.getProperty("job_role"));
         page.selectNeeds(ConfigReader.getProperty("needs"));
-
         page.clickSubmit();
-
         WebDriverWait wait =
                 new WebDriverWait(driver, Duration.ofSeconds(15));
-
         wait.until(ExpectedConditions.urlContains("thank-you"));
         System.out.println("The form is submitted succesfully and the current URL"+ driver.getCurrentUrl());
-
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("thank-you"),
                 "Thank You page is not displayed");

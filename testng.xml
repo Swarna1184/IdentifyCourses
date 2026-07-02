@@ -10,6 +10,11 @@
             <class name="org.identifycourses.tests.TC_03_SearchInvalid"/>
             <class name="org.identifycourses.tests.TC_04_SearchEmpty"/>
             <class name="org.identifycourses.tests.TC_05_SearchSpecial"/>
+            <class name="org.identifycourses.tests.TC_06_BeginnerFilter"/>
+            <class name="org.identifycourses.tests.TC_07_EnglishFilter"/>
+            <class name="org.identifycourses.tests.TC_08_BothFilters"/>
+            <class name="org.identifycourses.tests.TC_09_ValidateCourses"/>
+            <class name="org.identifycourses.tests.TC_10_ExtractDetails"/>
             <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
             <class name="org.identifycourses.tests.TC_12_GetLanguages"/>
             <class name="org.identifycourses.tests.TC_16_Universities"/>
