@@ -38,6 +38,7 @@ public class TC_16_Universities extends BaseTest {
         );
 
         System.out.println("TC_16 PASSED - Successfully navigated to 'For Universities' section.");
+
     }
 
 

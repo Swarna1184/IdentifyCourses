@@ -32,12 +32,10 @@ public class HomePage {
         wait.until(ExpectedConditions.elementToBeClickable(searchBox));
         searchBox.click();
     }
-
     public void enterSearchKeyword(String keyword) {
         searchBox.clear();
         searchBox.sendKeys(keyword);
     }
-
     public SearchPage clickSearchIcon() {
         // Press ENTER inside search box — equivalent to clicking the search icon
         searchBox.sendKeys(Keys.ENTER);
