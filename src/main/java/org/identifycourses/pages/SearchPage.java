@@ -3,16 +3,13 @@ package org.identifycourses.pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
-
 import java.time.Duration;
 import java.util.List;
 
 public class SearchPage {
-
     WebDriver driver;
     WebDriverWait wait;
     JavascriptExecutor js;
-
 
     public SearchPage(WebDriver driver) {
         this.driver = driver;
@@ -24,39 +21,26 @@ public class SearchPage {
 
     @FindBy(xpath = "//input[@type='search' or @type='text']")
     WebElement searchBox;
-
     @FindBy(xpath = "//button[contains(.,'Filter')]")
     WebElement filterButton;
-
     @FindBy(xpath = "//span[contains(text(),'Level')]")
     WebElement levelDropdown;
-
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'Beginner')]")
     WebElement beginnerCheckbox;
-
     @FindBy(xpath = "//button[contains(.,'View')]")
     WebElement viewButton;
-
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
     List<WebElement> courseCards;
-
    @FindBy(xpath = "//span[contains(text(),'Language')]")
     WebElement languageDropdown;
-
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
-
-
     @FindBy(xpath = "//h3")
     List<WebElement> courseNames;
-
     @FindBy(xpath = "//*[contains(text(),'hours')]")
     List<WebElement> learningHours;
-
     @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
     List<WebElement> ratings;
-
-
 
     private void safeClick(WebElement element) {
         try {
@@ -66,21 +50,20 @@ public class SearchPage {
         }
     }
 
-
     public void searchCourse(String course) {
 
+        By searchLocator =
+                By.xpath("//input[@type='search' or @type='text']");
 
-        WebElement box = wait.until(ExpectedConditions.visibilityOf(searchBox));
-
+        WebElement box = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(searchLocator));
         box.clear();
         box.sendKeys(course);
         box.sendKeys(Keys.ENTER);
-
-
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-
-        System.out.println("Search completed");
+        System.out.println(" Search completed");
     }
+
 
 
     public void applyBeginnerFilter() {
