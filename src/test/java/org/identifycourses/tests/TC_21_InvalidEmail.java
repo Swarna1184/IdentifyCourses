@@ -7,7 +7,6 @@ import org.identifycourses.pages.ContactUsPage;
 import utilities.ConfigReader;
 
 public class TC_21_InvalidEmail extends BaseTest {
-
     @Test
     public void validateInvalidEmail() {
         ContactUsPage page = new ContactUsPage(driver);

@@ -3,19 +3,16 @@ package org.identifycourses.pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageLearningPage {
-
     WebDriver driver;
 
     public LanguageLearningPage(WebDriver driver) {
@@ -26,16 +23,7 @@ public class LanguageLearningPage {
     @FindBy(xpath = "//a[@href='/browse/language-learning']")
     WebElement languageLearningOption;
 
-    @FindBy(xpath = "//span[contains(@class,'cds-checkboxAndRadio-label')]")
-    List<WebElement> languageList;
-
-    @FindBy(xpath = "//div[@role='dialog']//button[@aria-label='Close Message']")
-    WebElement closePopup;
-
-    @FindBy(xpath = "//h3[text()='Language']/following::button[contains(text(),'Show')]")
-    WebElement showMoreLanguages;
     public void openLanguageLearning() {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(languageLearningOption));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -47,7 +35,6 @@ public class LanguageLearningPage {
     }
 
     public void closePopupIfPresent() {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         try {
             System.out.println("Waiting for popup...");

@@ -10,7 +10,6 @@ public class TC_22_EmptyEmail extends BaseTest {
 
         @Test
         public void validateEmptyEmail() {
-
             ContactUsPage page = new ContactUsPage(driver);
             page.enterFirstName(ConfigReader.getProperty("firstName"));
             page.enterLastName(ConfigReader.getProperty("lastName"));

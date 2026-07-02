@@ -55,55 +55,41 @@ public class ContactUsPage {
     @FindBy(id = "Department")
     WebElement drpDepartment;
 
-
-
-
-
     public void enterFirstName(String firstName) {
             txtFirstName.sendKeys(firstName);
         }
-
         public void enterLastName(String lastName) {
             txtLastName.sendKeys(lastName);
         }
-
         public void enterEmail(String email) {
-
         txtEmail.sendKeys(email);
         }
-
         public void enterPhone(String phone) {
             txtPhone.sendKeys(phone);
         }
-
         public void enterInstitutionName(String institutionName) {
             txtInstitutionName.sendKeys(institutionName);
         }
-
     public void selectInstutionType(String institutionType) {
         Select select = new Select(drpInstitutionType);
         select.selectByVisibleText(institutionType);
     }
-
 
     public void selectJobRole(String jobRole) {
         Select select = new Select(drpJobRole);
         select.selectByVisibleText(jobRole);
     }
 
-
     public void selectDepartment(String department) {
         Select select = new Select(drpDepartment);
         select.selectByVisibleText(department);
     }
-
 
     public void selectNeeds(String needs) {
         Select select = new Select(drpNeeds);
         select.selectByVisibleText(needs.trim());
     }
     public void selectCountry(String country) {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(drpCountry));
         drpCountry.click();
@@ -121,43 +107,28 @@ public class ContactUsPage {
     public boolean isSubmitButtonDisplayed() {
         return btnSubmit.isDisplayed();
     }
-
     public boolean isSubmitButtonEnabled() {
         return btnSubmit.isEnabled();
     }
-
     public void clickSubmit() {
-
         WebDriverWait wait =
                 new WebDriverWait(driver, Duration.ofSeconds(10));
-
         wait.until(
                 ExpectedConditions.elementToBeClickable(btnSubmit));
-
         btnSubmit.click();
     }
 
-
-
         public String getErrorMessage() {
-
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOf(txtErrorMessage));
-
             WebDriverWait wait =
                     new WebDriverWait(driver, Duration.ofSeconds(10));
-
             wait.until(
                     ExpectedConditions.visibilityOf(txtErrorMessage));
-
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript(
                     "arguments[0].scrollIntoView({block:'center'});",
                     txtErrorMessage);
-
             return txtErrorMessage.getText();
-
-
-
         }
 }

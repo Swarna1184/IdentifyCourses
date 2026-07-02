@@ -1,16 +1,13 @@
 package org.identifycourses.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
 import utilities.ConfigReader;
 public class Tc_23_ErrorMessageDisplay extends  BaseTest{
 
-
         @Test
         public void validateErrorMessageDisplay() {
-
             ContactUsPage page = new ContactUsPage(driver);
             page.enterFirstName(ConfigReader.getProperty("firstName"));
             page.enterLastName(ConfigReader.getProperty("lastName"));
@@ -32,6 +29,4 @@ public class Tc_23_ErrorMessageDisplay extends  BaseTest{
                     "Please enter your work email address",
                     "Incorrect error message displayed");
         }
-
-
 }
