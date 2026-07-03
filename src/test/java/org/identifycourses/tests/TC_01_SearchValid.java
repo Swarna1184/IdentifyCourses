@@ -5,7 +5,6 @@ import org.identifycourses.pages.HomePage;
 import org.identifycourses.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 public class TC_01_SearchValid extends BaseTest {
 
     @Test
@@ -16,6 +15,7 @@ public class TC_01_SearchValid extends BaseTest {
         SearchPage search = home.clickSearchIcon();
         boolean resultsDisplayed = search.areResultsDisplayed();
         int count = search.getCourseCount();
+        logger.info("Total courses for 'Web Development': {}", count);
         System.out.println("Total courses for 'Web Development': " + count);
         Assert.assertTrue(resultsDisplayed,
                 "Expected search results but none were displayed.");

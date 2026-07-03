@@ -14,7 +14,6 @@ public class TC_07_EnglishFilter extends BaseTest {
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("Web Development");
-
         SearchPage searchPage = home.clickSearchIcon();
         Assert.assertTrue(
                 searchPage.areResultsDisplayed(),

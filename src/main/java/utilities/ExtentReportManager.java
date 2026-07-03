@@ -1,36 +1,45 @@
 package utilities;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.testng.*;
 
-public class ExtentReportManager {
+public class ExtentReportManager implements ITestListener {
+    private ExtentReports extent;
+    private ExtentTest test;
+    @Override
+    public void onStart(ITestContext context) {
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/reports/ExtentReport.html");
+        sparkReporter.config().setDocumentTitle("Automation Report");
+        sparkReporter.config().setReportName("Functional Testing");
+        sparkReporter.config().setTheme(Theme.STANDARD);
 
-    private static ExtentReports extent;
-    private static ExtentTest test;
+        extent = new ExtentReports();
+        extent.attachReporter(sparkReporter);
+        extent.setSystemInfo("Environment", "QA");
+        extent.setSystemInfo("Tester", "Ajitha");
+    }
+    public void onTestSuccess(ITestResult result) {
 
-    public static ExtentReports getInstance() {
-        if (extent == null) {
-            ExtentSparkReporter spark = new ExtentSparkReporter(
-                    System.getProperty("user.dir") + "/reports/ExtentReport.html");
-            spark.config().setReportName("Identify Courses - Automation Report");
-            spark.config().setDocumentTitle("Coursera Hackathon");
-            extent = new ExtentReports();
-            extent.attachReporter(spark);
-        }
-        return extent;
+        test = extent.createTest(result.getName()); // create a new enty in the report
+        test.log(Status.PASS, "Test case PASSED is:" + result.getName()); // update status p/f/s
+
+    }
+    public void onTestFailure(ITestResult result) {
+
+        test = extent.createTest(result.getName());
+        test.log(Status.FAIL, "Test case FAILED is:" + result.getName());
+        test.log(Status.FAIL, "Test Case FAILED cause is: " + result.getThrowable());
     }
 
-    public static ExtentTest createTest(String name) {
-        test = getInstance().createTest(name);
-        return test;
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        test = extent.createTest(result.getName());
+        test.log(Status.SKIP, "Test case SKIPPED: " + result.getName());
     }
 
-    public static ExtentTest getTest() {
-        return test;
-    }
-
-    public static void flush() {
-        if (extent != null) extent.flush();
+    @Override
+    public void onFinish(ITestContext context) {
+        extent.flush();
     }
 }

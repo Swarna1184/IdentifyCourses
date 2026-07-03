@@ -16,10 +16,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import utilities.ConfigReader;
 
 public class BaseTest {
     protected WebDriver driver;
+
+    protected Logger logger = LogManager.getLogger(this.getClass());
+
     @BeforeClass
     public void setup() {
         String browser = ConfigReader.getProperty("browser");
@@ -32,11 +38,13 @@ public class BaseTest {
         driver.manage().timeouts()
                 .implicitlyWait(Duration.ofSeconds(10));
         driver.get(ConfigReader.getProperty("url"));
+        logger.info("Application launched successfully");
+
+
     }
 
 
-
-        @AfterClass
+    @AfterClass
     public void tearDown() {
           driver.quit();
 

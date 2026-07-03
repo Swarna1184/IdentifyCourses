@@ -13,7 +13,6 @@ public class HomePage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-
     @FindBy(css = "input[data-testid='HeaderSearchInput'], input[name='query'], input[placeholder*='Search'], input[aria-label*='Search']")
     private WebElement searchBox;
 
@@ -31,7 +30,6 @@ public class HomePage {
         searchBox.sendKeys(keyword);
     }
     public SearchPage clickSearchIcon() {
-
         searchBox.sendKeys(Keys.ENTER);
         return new SearchPage(driver);
     }

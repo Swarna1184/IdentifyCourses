@@ -16,9 +16,9 @@ public class SearchPage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.js = (JavascriptExecutor) driver;
-
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//input[@type='search' or @type='text']")
     WebElement searchBox;
     @FindBy(xpath = "//button[contains(.,'Filter')]")
@@ -31,7 +31,7 @@ public class SearchPage {
     WebElement viewButton;
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
     List<WebElement> courseCards;
-   @FindBy(xpath = "//span[contains(text(),'Language')]")
+    @FindBy(xpath = "//span[contains(text(),'Language')]")
     WebElement languageDropdown;
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
@@ -48,6 +48,7 @@ public class SearchPage {
             js.executeScript("arguments[0].click();", element);
         }
     }
+
     public void applyBeginnerFilter() {
         js.executeScript("window.scrollBy(0,500)");
         WebElement filter = wait.until(ExpectedConditions.visibilityOf(filterButton));
@@ -88,6 +89,7 @@ public class SearchPage {
         wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
         System.out.println("English language filter applied");
     }
+
     public void applyBothFilters() {
         js.executeScript("window.scrollBy(0,500)");
         safeClick(filterButton);

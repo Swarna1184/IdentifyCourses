@@ -19,28 +19,39 @@ public class ContactUsPage {
         }
         @FindBy(id = "FirstName")
          WebElement txtFirstName;
+
         @FindBy(id = "LastName")
          WebElement txtLastName;
+
         @FindBy(id = "Email")
          WebElement txtEmail;
+
         @FindBy(id = "Phone")
          WebElement txtPhone;
+
         @FindBy(id = "Company")
         WebElement txtInstitutionName;
+
         @FindBy(xpath = "//button[@type='submit']")
          WebElement btnSubmit;
+
         @FindBy(id = "ValidMsgEmail")
          WebElement txtErrorMessage;
+
         @FindBy(xpath = "//select[@id='Country']")
         WebElement drpCountry;
         @FindBy(id="State")
         WebElement drpState;
+
         @FindBy(id = "Institution_Type__c")
         WebElement drpInstitutionType;
+
         @FindBy(id = "Self_Reported_Needs__c")
         WebElement drpNeeds;
+
         @FindBy(id = "Title")
         WebElement drpJobRole;
+
         @FindBy(id = "Department")
         WebElement drpDepartment;
 
@@ -56,7 +67,6 @@ public class ContactUsPage {
 
         txtEmail.sendKeys(email);
         }
-
         public void enterPhone(String phone) {
             txtPhone.sendKeys(phone);
         }
@@ -71,10 +81,12 @@ public class ContactUsPage {
             Select select = new Select(drpJobRole);
             select.selectByVisibleText(jobRole);
         }
+
         public void selectDepartment(String department) {
             Select select = new Select(drpDepartment);
             select.selectByVisibleText(department);
         }
+
 
         public void selectNeeds(String needs) {
             Select select = new Select(drpNeeds);
@@ -111,18 +123,18 @@ public class ContactUsPage {
             btnSubmit.click();
         }
 
-            public String getErrorMessage() {
-                wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-                wait.until(ExpectedConditions.visibilityOf(txtErrorMessage));
-                WebDriverWait wait =
-                        new WebDriverWait(driver, Duration.ofSeconds(10));
-                wait.until(
-                        ExpectedConditions.visibilityOf(txtErrorMessage));
+        public String getErrorMessage() {
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(txtErrorMessage));
+            WebDriverWait wait =
+                    new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(
+                    ExpectedConditions.visibilityOf(txtErrorMessage));
 
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript(
-                        "arguments[0].scrollIntoView({block:'center'});",
-                        txtErrorMessage);
-                return txtErrorMessage.getText();
-            }
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript(
+                    "arguments[0].scrollIntoView({block:'center'});",
+                    txtErrorMessage);
+            return txtErrorMessage.getText();
+        }
 }

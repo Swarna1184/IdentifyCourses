@@ -10,7 +10,6 @@ public class TC_10_ExtractDetails extends BaseTest {
 
     @Test
     public void extractCourseDetailsAfterFiltering() throws IOException {
-
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("Web Development");

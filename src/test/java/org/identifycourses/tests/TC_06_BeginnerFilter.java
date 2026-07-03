@@ -11,7 +11,6 @@ public class TC_06_BeginnerFilter extends BaseTest {
 
     @Test
     public void verifyBeginnerFilterCourses() throws IOException {
-
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("Web Development");

@@ -1,0 +1,5 @@
+2026-07-03 16:42:27 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 16:42:39 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-03 16:42:50 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
