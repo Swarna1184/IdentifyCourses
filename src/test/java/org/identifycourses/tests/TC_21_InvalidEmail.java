@@ -6,10 +6,11 @@ import basetest.BaseTest;
 import org.identifycourses.pages.ContactUsPage;
 import utilities.ConfigReader;
 
-public class TC_21_InvalidEmail extends BaseTest {
+import java.io.IOException;
 
+public class TC_21_InvalidEmail extends BaseTest {
     @Test
-    public void validateInvalidEmail() {
+    public void validateInvalidEmail() throws IOException {
         ContactUsPage page = new ContactUsPage(driver);
         page.enterFirstName(ConfigReader.getProperty("firstName"));
         page.enterLastName(ConfigReader.getProperty("lastName"));
@@ -25,8 +26,10 @@ public class TC_21_InvalidEmail extends BaseTest {
         page.clickSubmit();
         String actualError = page.getErrorMessage();
         System.out.println("Validation Error : " + actualError);
+        BaseTest.takeScreenShot(driver, "InvalidEmail");
         Assert.assertTrue(
                 actualError.contains("Please enter your work email address"),
                 "Email validation message not displayed");
+
     }
 }
