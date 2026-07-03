@@ -1,24 +1,16 @@
 package org.identifycourses.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class ContactUsPage {
-    WebDriver driver;
-    WebDriverWait wait;
+public class ContactUsPage extends CommonCode {
 
     public ContactUsPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(id = "FirstName")
@@ -101,13 +93,11 @@ public class ContactUsPage {
     }
 
     public void selectCountry(String country) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(drpCountry));
-        drpCountry.click();
-        WebElement countryOption = wait.until(
-                ExpectedConditions.elementToBeClickable(
+        clickElement(drpCountry);
+        WebElement countryOption =
+                wait.until(ExpectedConditions.elementToBeClickable(
                         By.xpath("//*[text()='" + country + "']")));
-        countryOption.click();
+        clickElement(countryOption);
     }
 
     public void selectState(String state) {
@@ -124,25 +114,12 @@ public class ContactUsPage {
     }
 
     public void clickSubmit() {
-        WebDriverWait wait =
-                new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(
-                ExpectedConditions.elementToBeClickable(btnSubmit));
-        btnSubmit.click();
+        clickElement(btnSubmit);
     }
 
     public String getErrorMessage() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(txtErrorMessage));
-        WebDriverWait wait =
-                new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(
-                ExpectedConditions.visibilityOf(txtErrorMessage));
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript(
-                "arguments[0].scrollIntoView({block:'center'});",
-                txtErrorMessage);
+        waitForVisibility(txtErrorMessage);
+        scrollIntoView(txtErrorMessage);
         return txtErrorMessage.getText();
     }
 }

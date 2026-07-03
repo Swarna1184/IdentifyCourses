@@ -1,33 +1,26 @@
 package org.identifycourses.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
-public class UniversitiesPage {
-    WebDriver driver;
-    WebDriverWait wait;
+
+public class UniversitiesPage extends CommonCode {
+
     public UniversitiesPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
+
     @FindBy(xpath = "//a[@aria-label='Coursera']")
     WebElement courseraLogo;
+
     @FindBy(xpath = "//a[normalize-space()='For Universities']")
     WebElement forUniversitiesLink;
 
     public void clickForUniversities() {
-        wait.until(ExpectedConditions.elementToBeClickable(forUniversitiesLink));
         try {
-            forUniversitiesLink.click();
+            clickElement(forUniversitiesLink);
         } catch (Exception e) {
-            ((JavascriptExecutor) driver)
-                    .executeScript("arguments[0].click();", forUniversitiesLink);
+            clickByJS(forUniversitiesLink);
         }
     }
 
@@ -37,17 +30,22 @@ public class UniversitiesPage {
     }
 
     public void switchToNewWindow() {
-        String parent = driver.getWindowHandle();
-        for (String h : driver.getWindowHandles()) {
-            if (!h.equals(parent)) {
-                driver.switchTo().window(h);
+        String parentWindow = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            if (!handle.equals(parentWindow)) {
+                driver.switchTo().window(handle);
                 break;
             }
         }
     }
-    public String getCurrentUrl() { return driver.getCurrentUrl(); }
 
-    public String getPageTitle() { return driver.getTitle(); }
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
+
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
 
     public boolean isUniversitiesPageDisplayed() {
         String url = driver.getCurrentUrl().toLowerCase();
