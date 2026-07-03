@@ -22,11 +22,15 @@
             <class name="org.identifycourses.tests.TC_14_CountLevels"/>
             <class name="org.identifycourses.tests.TC_15_GetLevels"/>
             <class name="org.identifycourses.tests.TC_16_Universities"/>
-            <!--<class name="org.identifycourses.tests.TC_21_InvalidEmail"/>
+            <class name="org.identifycourses.tests.TC_17_Campus"/>
+            <class name="org.identifycourses.tests.TC_18_PageLoad"/>
+            <class name="org.identifycourses.tests.TC_19_Links"/>
+            <class name="org.identifycourses.tests.TC_20_LoadTime"/>
+            <class name="org.identifycourses.tests.TC_21_InvalidEmail"/>
             <class name="org.identifycourses.tests.TC_22_EmptyEmail"/>
             <class name="org.identifycourses.tests.Tc_23_ErrorMessageDisplay"/>
             <class name="org.identifycourses.tests.TC_24_CorrectEmail"/>
-            <class name="org.identifycourses.tests.TC_25_SubmitButton"/>-->
+            <class name="org.identifycourses.tests.TC_25_SubmitButton"/>
         </classes>
     </test>
 </suite>

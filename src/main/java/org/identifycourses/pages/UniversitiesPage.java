@@ -1,6 +1,5 @@
 package org.identifycourses.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,17 +18,21 @@ public class UniversitiesPage extends CommonCode {
 
     public void clickForUniversities() {
         try {
-            waitForClickable(forUniversitiesLink);
-            forUniversitiesLink.click();
+            clickElement(forUniversitiesLink);
         } catch (Exception e) {
             clickByJS(forUniversitiesLink);
         }
     }
 
+    public void goToUniversitiesPage() {
+        clickForUniversities();
+        switchToNewWindow();
+    }
+
     public void switchToNewWindow() {
-        String parent = driver.getWindowHandle();
+        String parentWindow = driver.getWindowHandle();
         for (String handle : driver.getWindowHandles()) {
-            if (!handle.equals(parent)) {
+            if (!handle.equals(parentWindow)) {
                 driver.switchTo().window(handle);
                 break;
             }
@@ -45,25 +48,7 @@ public class UniversitiesPage extends CommonCode {
     }
 
     public boolean isUniversitiesPageDisplayed() {
-        try {
-            wait.until(d ->
-                    ((JavascriptExecutor) d)
-                            .executeScript("return document.readyState")
-                            .equals("complete"));
-            String url = driver.getCurrentUrl().toLowerCase();
-            String title = driver.getTitle().toLowerCase();
-            if (url.contains("campus") || url.contains("universities")) {
-                System.out.println("Verified via URL: " + url);
-                return true;
-            }
-            if (title.contains("campus") || title.contains("universities")) {
-                System.out.println("Verified via Title: " + title);
-                return true;
-            }
-            return false;
-        } catch (Exception e) {
-            System.out.println("Verification failed: " + e.getMessage());
-            return false;
-        }
+        String url = driver.getCurrentUrl().toLowerCase();
+        return url.contains("campus") || url.contains("universities");
     }
 }

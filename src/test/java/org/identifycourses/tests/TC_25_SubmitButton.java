@@ -9,7 +9,7 @@ import utilities.ConfigReader;
 
 import java.io.IOException;
 
-public class TC_25_SubmitButton extends BaseTest {
+public class TC_25_SubmitButton extends TC_20_LoadTime {
     @Test
     public void validateSubmitButton() throws IOException {
 
