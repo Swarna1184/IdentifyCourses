@@ -3,7 +3,6 @@ package org.identifycourses.pages;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +19,6 @@ public class LanguageLearningPage {
     JavascriptExecutor js;
 
     public LanguageLearningPage(WebDriver driver) {
-
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.js = (JavascriptExecutor) driver;
@@ -48,7 +46,6 @@ public class LanguageLearningPage {
     @FindBy(xpath = "//button[@data-testid='expand-filter-items-button']")
     WebElement showMoreLanguages;
 
-
     public void navigateToLanguageLearning() {
         try {
             wait.until(
@@ -74,31 +71,18 @@ public class LanguageLearningPage {
     public void closePopupIfPresent() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
             wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(
                     By.xpath("//iframe[@title='Modal Message']")));
-
             wait.until(ExpectedConditions.elementToBeClickable(
                             By.xpath("//button[@aria-label='Close Message']")))
                     .click();
-
             driver.switchTo().defaultContent();
-
-
-//            WebDriverWait popupWait =
-//                    new WebDriverWait(driver, Duration.ofSeconds(10));
-//            popupWait.until(
-//                    ExpectedConditions.elementToBeClickable(closePopup));
-//            js.executeScript("arguments[0].click();", closePopup);
-            //closePopup.click();
-
             System.out.println("Popup closed successfully");
         }
         catch (Exception e) {
             System.out.println("Popup not displayed");
         }
     }
-
     public List<String> getLanguages() {
         List<String> languages = new ArrayList<>();
         try {
@@ -133,62 +117,39 @@ public class LanguageLearningPage {
     }
 
     public List<String> getLevels() {
-
         List<String> levels = new ArrayList<>();
-
         try {
-
             wait.until(
                     ExpectedConditions.visibilityOf(levelHeader));
-
             js.executeScript(
                     "arguments[0].scrollIntoView({block:'center'});",
                     levelHeader);
-
             System.out.println("Scrolled to Level section");
-
         } catch (Exception e) {
-
             System.out.println("Level section not found");
         }
-
         try {
-
             Thread.sleep(2000);
-
             for (WebElement ele : levelElements) {
-
                 String text = ele.getText().trim();
-
                 if (!text.isEmpty()) {
-
                     levels.add(text);
-
                     System.out.println(text);
                 }
             }
-
         } catch (Exception e) {
-
             e.printStackTrace();
         }
-
         return levels;
     }
 
     public int getLanguageCount() {
-
-        List<String> languages =
-                getLanguages();
-
+        List<String> languages = getLanguages();
         return languages.size();
     }
 
     public int getLevelCount() {
-
-        List<String> levels =
-                getLevels();
-
+        List<String> levels = getLevels();
         return levels.size();
     }
 
