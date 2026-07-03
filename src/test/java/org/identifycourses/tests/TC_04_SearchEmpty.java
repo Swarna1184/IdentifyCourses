@@ -27,8 +27,8 @@ public class TC_04_SearchEmpty extends BaseTest {
             // Expected — URL should NOT change for empty search
         }
         String newUrl = driver.getCurrentUrl();
-        System.out.println("Original URL: " + originalUrl);
-        System.out.println("New URL     : " + newUrl);
+        logger.info("Original URL: {}", originalUrl);
+        logger.info("New URL     : {}", newUrl);
         Assert.assertFalse(newUrl.contains("search?query="),
                 "Empty search should not navigate to a search results page.");
     }

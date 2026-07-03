@@ -6,6 +6,10 @@ import org.identifycourses.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
+import utilities.ExcelUtils;
+import java.util.List;
+import java.util.Map;
+
 public class TC_10_ExtractDetails extends BaseTest {
 
     @Test
@@ -19,8 +23,10 @@ public class TC_10_ExtractDetails extends BaseTest {
                 searchPage.getCourseCount() >= 2,
                 "Less than 2 courses found"
         );
-        searchPage.extractCourseDetails();
+        List<Map<String,String>> courses =
+                searchPage.getCourseDetails();
+        ExcelUtils.writeCourseDetailsToExcel(courses);
         BaseTest.takeScreenShot(driver, "ExtractDetails");
-        System.out.println("TC_10 PASSED");
+        logger.info("Courses details are extracted successfully");
     }
 }

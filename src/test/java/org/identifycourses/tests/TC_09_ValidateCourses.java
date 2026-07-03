@@ -22,8 +22,6 @@ public class TC_09_ValidateCourses extends BaseTest {
                 "Less than 2 courses found. Actual count: " + courseCount
         );
         BaseTest.takeScreenShot(driver, "ValidateCourses");
-        System.out.println(
-                "TC_09 PASSED - Found " + courseCount + " courses"
-        );
+        logger.info("Courses validated and - Found {} courses", courseCount);
     }
 }

@@ -29,6 +29,6 @@ public class TC_08_BothFilters extends BaseTest {
                 "Less than 2 courses found after applying filters"
         );
         BaseTest.takeScreenShot(driver, "BothFilters");
-        System.out.println("TC_08 PASSED");
+        logger.info("Both Beginner and English filter executed succesfully");
     }
 }

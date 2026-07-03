@@ -4,6 +4,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileOutputStream;
 import java.util.List;
+import java.util.Map;
 
 public class ExcelUtils {
 
@@ -61,6 +62,41 @@ public class ExcelUtils {
             workbook.close();
             System.out.println("Levels written to Excel");
         } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeCourseDetailsToExcel(List<Map<String, String>> courses) {
+
+        try {
+
+            Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Course Details");
+            Row header = sheet.createRow(0);
+            header.createCell(0).setCellValue("Course Name");
+            header.createCell(1).setCellValue("Learning Hours");
+            header.createCell(2).setCellValue("Ratings");
+            int rowNum = 1;
+            for(Map<String, String> course : courses) {
+
+                System.out.println("Writing -> " + course);
+
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(course.get("Name"));
+                row.createCell(1).setCellValue(course.get("Hours"));
+                row.createCell(2).setCellValue(course.get("Rating"));
+            }
+            for (int i = 0; i < 3; i++) {
+                sheet.autoSizeColumn(i);
+            }
+            FileOutputStream fileOut =
+                    new FileOutputStream("CourseDetails.xlsx");
+            workbook.write(fileOut);
+            fileOut.flush();
+            fileOut.close();
+            workbook.close();
+            System.out.println("Course Details written to Excel successfully");
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -11,7 +11,7 @@ import utilities.ConfigReader;
 import java.io.IOException;
 import java.time.Duration;
 
-public class TC_24_CorrectEmail extends BaseTest {
+public class TC_24_CorrectEmail extends TC_20_LoadTime {
     @Test
     public void validateCorrectdEmail() throws IOException {
 
@@ -33,7 +33,7 @@ public class TC_24_CorrectEmail extends BaseTest {
                 new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.urlContains("thank-you"));
         BaseTest.takeScreenShot(driver, "CorrectEmail");
-        System.out.println("The form is submitted succesfully and the current URL"+ driver.getCurrentUrl());
+        logger.info("The form is submitted succesfully and the current URL{}", driver.getCurrentUrl());
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("thank-you"),
                 "Thank You page is not displayed");

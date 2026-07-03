@@ -25,6 +25,7 @@ public class TC_07_EnglishFilter extends BaseTest {
                 "English filtered results not displayed"
         );
         BaseTest.takeScreenShot(driver, "EnglishFilter");
-        System.out.println("TC_07 PASSED");
+        logger.info("Successfully filtered English Level");
+
     }
 }

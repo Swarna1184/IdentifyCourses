@@ -16,7 +16,6 @@ public class TC_01_SearchValid extends BaseTest {
         boolean resultsDisplayed = search.areResultsDisplayed();
         int count = search.getCourseCount();
         logger.info("Total courses for 'Web Development': {}", count);
-        System.out.println("Total courses for 'Web Development': " + count);
         Assert.assertTrue(resultsDisplayed,
                 "Expected search results but none were displayed.");
         Assert.assertTrue(count > 0,

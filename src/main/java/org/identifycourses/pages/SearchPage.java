@@ -3,66 +3,95 @@ package org.identifycourses.pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
-import java.time.Duration;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class SearchPage {
-
-    WebDriver driver;
-    WebDriverWait wait;
-    JavascriptExecutor js;
+public class SearchPage extends CommonCode {
 
     public SearchPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        this.js = (JavascriptExecutor) driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//input[@type='search' or @type='text']")
     WebElement searchBox;
+
     @FindBy(xpath = "//button[contains(.,'Filter')]")
     WebElement filterButton;
+
     @FindBy(xpath = "//span[contains(text(),'Level')]")
     WebElement levelDropdown;
+
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'Beginner')]")
     WebElement beginnerCheckbox;
+
     @FindBy(xpath = "//button[contains(.,'View')]")
     WebElement viewButton;
+
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
     List<WebElement> courseCards;
+
     @FindBy(xpath = "//span[contains(text(),'Language')]")
     WebElement languageDropdown;
+
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
-    @FindBy(xpath = "//h3")
+
+    /*@FindBy(xpath = "//h3")
     List<WebElement> courseNames;
+
     @FindBy(xpath = "//*[contains(text(),'hours')]")
     List<WebElement> learningHours;
+
     @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
+    List<WebElement> ratings;*/
+
+    /*@FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
+    List<WebElement> courseNames;
+
+    @FindBy(xpath = "//*[contains(text(),'hours')]")
+    List<WebElement> learningHours;
+
+    @FindBy(xpath = "//main//section//div[.//h3 and .//*[contains(text(),'hours')]]")
+    List<WebElement> ratings;*/
+
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//h3")
+    List<WebElement> courseNames;
+
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(text(),'hours') or contains(text(),'Weeks') or contains(text(),'Months')]")
+    List<WebElement> learningHours;
+
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(@aria-label,'out of 5 stars')]")
     List<WebElement> ratings;
+
     private void safeClick(WebElement element) {
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+            clickElement(element);
         } catch (Exception e) {
-            js.executeScript("arguments[0].click();", element);
+            clickByJS(element);
         }
+    }
+    public void searchCourse(String course) {
+        WebElement box = waitForVisibility(searchBox);
+        box.clear();
+        box.sendKeys(course);
+        box.sendKeys(Keys.ENTER);
+        waitForAllElementsVisible(courseCards);
+        System.out.println("Search completed");
     }
 
     public void applyBeginnerFilter() {
-        js.executeScript("window.scrollBy(0,500)");
-        WebElement filter = wait.until(ExpectedConditions.visibilityOf(filterButton));
-        js.executeScript("arguments[0].scrollIntoView({block:'center'});", filter);
-        safeClick(filter);
-        WebElement level = wait.until(ExpectedConditions.elementToBeClickable(levelDropdown));
-        safeClick(level);
-        WebElement beginner = wait.until(ExpectedConditions.elementToBeClickable(beginnerCheckbox));
-        if (!beginner.isSelected()) {
-            safeClick(beginner);
+        scrollIntoView(filterButton);
+        safeClick(filterButton);
+        safeClick(levelDropdown);
+        if (!beginnerCheckbox.isSelected()) {
+            safeClick(beginnerCheckbox);
         }
-        WebElement view = wait.until(ExpectedConditions.elementToBeClickable(viewButton));
-        safeClick(view);
-        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+        safeClick(viewButton);
+        waitForAllElementsVisible(courseCards);
         System.out.println("Beginner filter applied");
     }
 
@@ -71,27 +100,19 @@ public class SearchPage {
     }
 
     public void applyEnglishFilter() {
-        js.executeScript("window.scrollBy(0,500)");
-        WebElement filter = wait.until(
-                ExpectedConditions.elementToBeClickable(filterButton));
-        safeClick(filter);
-        WebElement language = wait.until(
-                ExpectedConditions.elementToBeClickable(languageDropdown));
-        safeClick(language);
-        WebElement english = wait.until(
-                ExpectedConditions.elementToBeClickable(englishCheckbox));
-        if (!english.isSelected()) {
-            safeClick(english);
+        scrollIntoView(filterButton);
+        safeClick(filterButton);
+        safeClick(languageDropdown);
+        if (!englishCheckbox.isSelected()) {
+            safeClick(englishCheckbox);
         }
-        WebElement view = wait.until(
-                ExpectedConditions.elementToBeClickable(viewButton));
-        safeClick(view);
-        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+        safeClick(viewButton);
+        waitForAllElementsVisible(courseCards);
         System.out.println("English language filter applied");
     }
 
     public void applyBothFilters() {
-        js.executeScript("window.scrollBy(0,500)");
+        scrollIntoView(filterButton);
         safeClick(filterButton);
         safeClick(levelDropdown);
         if (!beginnerCheckbox.isSelected()) {
@@ -102,39 +123,66 @@ public class SearchPage {
             safeClick(englishCheckbox);
         }
         safeClick(viewButton);
-        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
-        System.out.println(" Beginner + English filters applied");
+        waitForAllElementsVisible(courseCards);
+        System.out.println("Beginner + English filters applied");
     }
 
     public int getCourseCount() {
-        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+        waitForAllElementsVisible(courseCards);
         int count = courseCards.size();
         System.out.println("Total courses found: " + count);
         return count;
     }
-
-    public void extractCourseDetails() {
-        wait.until(ExpectedConditions.visibilityOfAllElements(courseCards));
+    public List<Map<String, String>> getCourseDetails() {
+        List<Map<String, String>> courses = new ArrayList<>();
+        waitForAllElementsVisible(courseCards);
         int count = Math.min(2, courseCards.size());
-        System.out.println("\n===== TOP COURSES =====");
         for (int i = 0; i < count; i++) {
-            String courseName = courseNames.get(i).getText();
+            WebElement card = courseCards.get(i);
+            String courseName = "N/A";
             String hours = "N/A";
             String rating = "N/A";
             try {
-                hours = learningHours.get(i).getText();
+                courseName = card.findElement(By.xpath(".//h3")).getText();
             } catch (Exception e) {
-                System.out.println("Hours not found");
+                e.printStackTrace();
             }
+
             try {
-                rating = ratings.get(i).getText();
+                String cardText = card.getText();
+
+                // Rating
+                java.util.regex.Pattern ratingPattern =
+                        java.util.regex.Pattern.compile("★\\s*([0-9]+\\.?[0-9]*)");
+
+                java.util.regex.Matcher ratingMatcher =
+                        ratingPattern.matcher(cardText);
+
+                if (ratingMatcher.find()) {
+                    rating = ratingMatcher.group(1);
+                }
+                java.util.regex.Pattern durationPattern =
+                        java.util.regex.Pattern.compile(
+                                "(\\d+\\s*-\\s*\\d+\\s*(Weeks|Months))|(\\d+(\\.\\d+)?\\s*hours)");
+                java.util.regex.Matcher durationMatcher =
+                        durationPattern.matcher(cardText);
+
+                if (durationMatcher.find()) {
+                    hours = durationMatcher.group();
+                }
             } catch (Exception e) {
-                System.out.println("Rating not found");
+                e.printStackTrace();
             }
-            System.out.println("\nCourse " + (i + 1));
-            System.out.println("Name   : " + courseName);
-            System.out.println("Hours  : " + hours);
-            System.out.println("Rating : " + rating);
+            Map<String, String> course = new HashMap<>();
+            course.put("Name", courseName);
+            course.put("Hours", hours);
+            course.put("Rating", rating);
+            System.out.println(course);
+            courses.add(course);
         }
+
+        System.out.println("Final Course List = " + courses);
+
+        return courses;
     }
 }

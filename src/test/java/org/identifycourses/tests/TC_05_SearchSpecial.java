@@ -20,7 +20,7 @@ public class TC_05_SearchSpecial extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
         String currentUrl = driver.getCurrentUrl();
-        System.out.println("Current URL after special-char search: " + currentUrl);
+        logger.info("Current URL after special-char search: {}", currentUrl);
         Assert.assertTrue(currentUrl.contains("coursera.org"),
                 "System should remain on Coursera without crashing after special-character search.");
     }

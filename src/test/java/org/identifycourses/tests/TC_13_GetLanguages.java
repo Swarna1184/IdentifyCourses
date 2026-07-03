@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import basetest.BaseTest;
 import org.identifycourses.pages.LanguageLearningPage;
 import utilities.ExcelUtils;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -19,6 +18,7 @@ public class TC_13_GetLanguages extends BaseTest {
         String url = driver.getCurrentUrl();
         System.out.println("Current URL: " + url);
         List<String> languages = langPage.getLanguages();
+        logger.info("Retrieved all the languages");
         System.out.println("Languages Found: " + languages);
         BaseTest.takeScreenShot(driver, "Languages");
         Assert.assertFalse(

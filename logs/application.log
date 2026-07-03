@@ -3,3 +3,88 @@
 
 2026-07-03 16:42:39 [main] INFO  TC_01_SearchValid - Application launched successfully
 2026-07-03 16:42:50 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-03 17:23:00 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 17:23:06 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-03 17:23:12 [main] INFO  TC_06_BeginnerFilter - TC_06 PASSED
+2026-07-03 17:27:51 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 17:27:57 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-03 17:28:06 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-03 18:14:18 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 18:14:51 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 18:15:22 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 18:17:48 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 18:17:53 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 18:18:24 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 18:18:50 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 18:18:57 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 18:19:31 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 23:20:21 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 23:20:28 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 23:21:03 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 23:41:25 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 23:41:35 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 23:42:27 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 23:42:58 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 23:43:04 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 23:44:00 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 23:57:56 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 23:58:02 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 23:58:33 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-03 23:58:58 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-03 23:59:05 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-03 23:59:45 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:07:47 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:07:55 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:08:12 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:12:09 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:12:18 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:12:28 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:13:09 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:13:15 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:13:34 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:16:53 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:16:59 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:17:18 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:22:33 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:22:42 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:23:00 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:28:41 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:28:47 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:29:01 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 00:29:17 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 00:29:27 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 00:29:39 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully

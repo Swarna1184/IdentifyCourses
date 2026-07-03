@@ -25,6 +25,6 @@ public class TC_06_BeginnerFilter extends BaseTest {
                 "Filtered results not displayed"
         );
         BaseTest.takeScreenShot(driver, "BeginnerFilter");
-        System.out.println("TC_06 PASSED");
+        logger.info("Successfully filtered Beginner Level");
     }
 }

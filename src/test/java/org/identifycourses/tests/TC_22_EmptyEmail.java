@@ -8,7 +8,7 @@ import utilities.ConfigReader;
 
 import java.io.IOException;
 
-public class TC_22_EmptyEmail extends BaseTest {
+public class TC_22_EmptyEmail extends TC_20_LoadTime {
 
         @Test
         public void validateEmptyEmail() throws IOException {
@@ -26,7 +26,7 @@ public class TC_22_EmptyEmail extends BaseTest {
             page.selectNeeds(ConfigReader.getProperty("needs"));
             page.clickSubmit();
             String actualError = page.getErrorMessage();
-            System.out.println("Validation Error: " + actualError);
+            logger.info("Validation Error: {}", actualError);
             BaseTest.takeScreenShot(driver, "EmptyEmail");
             Assert.assertTrue(
                     actualError.length() > 0,
