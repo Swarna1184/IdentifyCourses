@@ -1,4 +1,33 @@
 package org.identifycourses.tests;
 
-public class TC_17_Campus {
+import basetest.BaseTest;
+import org.identifycourses.pages.UniversitiesPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TC_17_Campus extends BaseTest {
+
+    UniversitiesPage page;
+
+    @Test(priority = 17, description = "TC_17 - Verify Courses for Campus section visible")
+    public void verifyCampusSectionVisible() {
+
+        page = new UniversitiesPage(driver);
+
+        page.openCampusDirect();
+
+        String url = page.getCurrentUrl().toLowerCase();
+        String title = page.getPageTitle();
+
+        System.out.println("Campus URL : " + url);
+        System.out.println("Title      : " + title);
+
+        Assert.assertTrue(url.contains("campus"),
+                "Courses for Campus section not displayed");
+
+        Assert.assertFalse(title.isEmpty(),
+                "Campus page title is empty");
+
+        System.out.println("TC_17 PASSED");
+    }
 }

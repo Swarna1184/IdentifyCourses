@@ -15,6 +15,10 @@
             <class name="org.identifycourses.tests.TC_11_NavigateLanguages"/>
             <class name="org.identifycourses.tests.TC_12_GetLanguages"/>
             <class name="org.identifycourses.tests.TC_16_Universities"/>
+            <class name="org.identifycourses.tests.TC_17_Campus"/>
+            <class name="org.identifycourses.tests.TC_18_PageLoad"/>
+            <class name="org.identifycourses.tests.TC_19_Links"/>
+            <class name="org.identifycourses.tests.TC_20_LoadTime"/>
 
             <!--<class name="org.identifycourses.tests.TC_21_InvalidEmail"/>
             <class name="org.identifycourses.tests.TC_22_EmptyEmail"/>
