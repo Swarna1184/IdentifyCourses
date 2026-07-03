@@ -1,37 +1,29 @@
 package org.identifycourses.pages;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LanguageLearningPage {
-
-    WebDriver driver;
-    WebDriverWait wait;
-    JavascriptExecutor js;
+public class LanguageLearningPage extends CommonCode {
 
     public LanguageLearningPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        this.js = (JavascriptExecutor) driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//a[@href='/browse/language-learning']")
     WebElement languageLearningOption;
 
-    @FindBy(xpath = "//span[contains(@class,'cds-checkboxAndRadio-label')]")
+    @FindBy(xpath = "//div[starts-with(@data-testid,'language:')]//label")
     List<WebElement> languageElements;
 
-    @FindBy(xpath = "(//button[@aria-label='Close Message'])[1]")
+    @FindBy(xpath = "//iframe[@title='Modal Message']")
+    WebElement popupFrame;
+
+    @FindBy(xpath = "//button[@aria-label='Close Message']")
     WebElement closePopup;
 
     @FindBy(xpath = "//*[text()='Language']")
@@ -48,21 +40,14 @@ public class LanguageLearningPage {
 
     public void navigateToLanguageLearning() {
         try {
-            wait.until(
-                    ExpectedConditions.visibilityOf(languageLearningOption));
-            js.executeScript(
-                    "arguments[0].scrollIntoView({block:'center'});",
-                    languageLearningOption);
+            waitForVisibility(languageLearningOption);
+            scrollIntoView(languageLearningOption);
             Thread.sleep(1000);
-            js.executeScript(
-                    "arguments[0].click();",
-                    languageLearningOption);
-            wait.until(
-                    ExpectedConditions.urlContains("language-learning"));
+            clickByJS(languageLearningOption);
+            wait.until(ExpectedConditions.urlContains("language-learning"));
             System.out.println("Language Learning page opened");
             closePopupIfPresent();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Navigation failed");
             e.printStackTrace();
         }
@@ -70,41 +55,34 @@ public class LanguageLearningPage {
 
     public void closePopupIfPresent() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(
-                    By.xpath("//iframe[@title='Modal Message']")));
-            wait.until(ExpectedConditions.elementToBeClickable(
-                            By.xpath("//button[@aria-label='Close Message']")))
-                    .click();
+            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(popupFrame));
+            waitForClickable(closePopup);
+            clickByJS(closePopup);
             driver.switchTo().defaultContent();
             System.out.println("Popup closed successfully");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
+            driver.switchTo().defaultContent();
             System.out.println("Popup not displayed");
         }
     }
+
     public List<String> getLanguages() {
         List<String> languages = new ArrayList<>();
         try {
-            wait.until(
-                    ExpectedConditions.visibilityOf(languageHeader));
-            js.executeScript(
-                    "arguments[0].scrollIntoView({block:'center'});",
-                    languageHeader);
+            waitForVisibility(languageHeader);
+            scrollIntoView(languageHeader);
             System.out.println("Scrolled to Language section");
         } catch (Exception e) {
             System.out.println("Language header not found");
         }
         try {
-            wait.until(
-                    ExpectedConditions.elementToBeClickable(showMoreLanguages));
-            js.executeScript(
-                    "arguments[0].click();",
-                    showMoreLanguages);
+            waitForClickable(showMoreLanguages);
+            clickByJS(showMoreLanguages);
             System.out.println("Clicked Show More");
         } catch (Exception e) {
             System.out.println("Show More not found");
         }
+        waitForAllElementsVisible(languageElements);
         for (WebElement ele : languageElements) {
             String text = ele.getText().trim();
             if (!text.isEmpty()) {
@@ -112,33 +90,24 @@ public class LanguageLearningPage {
                 System.out.println(text);
             }
         }
-        System.out.println("Languages : " + languages);
         return languages;
     }
 
     public List<String> getLevels() {
         List<String> levels = new ArrayList<>();
         try {
-            wait.until(
-                    ExpectedConditions.visibilityOf(levelHeader));
-            js.executeScript(
-                    "arguments[0].scrollIntoView({block:'center'});",
-                    levelHeader);
+            waitForVisibility(levelHeader);
+            scrollIntoView(levelHeader);
             System.out.println("Scrolled to Level section");
         } catch (Exception e) {
             System.out.println("Level section not found");
         }
-        try {
-            Thread.sleep(2000);
-            for (WebElement ele : levelElements) {
-                String text = ele.getText().trim();
-                if (!text.isEmpty()) {
-                    levels.add(text);
-                    System.out.println(text);
-                }
+        for (WebElement ele : levelElements) {
+            String text = ele.getText().trim();
+            if (!text.isEmpty()) {
+                levels.add(text);
+                System.out.println(text);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return levels;
     }
