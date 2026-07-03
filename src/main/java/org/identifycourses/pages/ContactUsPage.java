@@ -92,7 +92,7 @@ public class ContactUsPage {
         }
 
 
-        public String getErrorMessage() {
+
 
         public void selectNeeds(String needs) {
             Select select = new Select(drpNeeds);
@@ -142,5 +142,5 @@ public class ContactUsPage {
                         "arguments[0].scrollIntoView({block:'center'});",
                         txtErrorMessage);
                 return txtErrorMessage.getText();
-            }
+        }
 }
