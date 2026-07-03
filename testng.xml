@@ -1,11 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="CourseraHackathonSuite">
-
     <test name="CourseSearchTests">
-
         <classes>
-
             <class name="org.identifycourses.tests.TC_01_SearchValid"/>
             <class name="org.identifycourses.tests.TC_02_SearchPartial"/>
             <class name="org.identifycourses.tests.TC_03_SearchInvalid"/>
@@ -24,9 +21,6 @@
             <class name="org.identifycourses.tests.Tc_23_ErrorMessageDisplay"/>
             <class name="org.identifycourses.tests.TC_24_CorrectEmail"/>
             <class name="org.identifycourses.tests.TC_25_SubmitButton"/>-->
-
         </classes>
-
     </test>
-
 </suite>

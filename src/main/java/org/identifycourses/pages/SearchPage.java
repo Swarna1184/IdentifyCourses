@@ -17,7 +17,6 @@ public class SearchPage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.js = (JavascriptExecutor) driver;
-
         PageFactory.initElements(driver, this);
     }
 

@@ -20,6 +20,7 @@ import utilities.ConfigReader;
 
 public class BaseTest {
     protected WebDriver driver;
+
     @BeforeClass
     public void setup() {
         String browser = ConfigReader.getProperty("browser");
@@ -34,9 +35,7 @@ public class BaseTest {
         driver.get(ConfigReader.getProperty("url"));
     }
 
-
-
-        @AfterClass
+    @AfterClass
     public void tearDown() {
           driver.quit();
 
