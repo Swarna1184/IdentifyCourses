@@ -2,24 +2,34 @@ package org.identifycourses.tests;
 
 import basetest.BaseTest;
 import org.identifycourses.pages.HomePage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class TC_04_SearchEmpty extends BaseTest {
 
-    @Test(description = "TC_004: Verify search with empty input field")
+    @Test
     public void searchEmptyKeyword() {
         HomePage home = new HomePage(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
         String originalUrl = driver.getCurrentUrl();
         home.clickSearchBox();
-        home.enterSearchKeyword("");     // no keyword
-        home.clickSearchIcon();          // ENTER on empty box
+        home.enterSearchKeyword("");
+        home.clickSearchIcon();
+        try {
+            wait.withTimeout(Duration.ofSeconds(5))
+                    .until(ExpectedConditions.not(ExpectedConditions.urlToBe(originalUrl)));
+        } catch (Exception e) {
+            // Expected — URL should NOT change for empty search
+        }
         String newUrl = driver.getCurrentUrl();
         System.out.println("Original URL: " + originalUrl);
         System.out.println("New URL     : " + newUrl);
-        boolean stayedOnHome = newUrl.equalsIgnoreCase(originalUrl)
-                || !newUrl.contains("search?query=");
-        Assert.assertTrue(stayedOnHome,
-                "Empty search should not navigate to a valid search results page.");
+        Assert.assertFalse(newUrl.contains("search?query="),
+                "Empty search should not navigate to a search results page.");
     }
 }

@@ -6,10 +6,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
 
+import java.io.IOException;
+
 public class TC_22_EmptyEmail extends BaseTest {
 
         @Test
-        public void validateEmptyEmail() {
+        public void validateEmptyEmail() throws IOException {
             ContactUsPage page = new ContactUsPage(driver);
             page.enterFirstName(ConfigReader.getProperty("firstName"));
             page.enterLastName(ConfigReader.getProperty("lastName"));
@@ -25,6 +27,7 @@ public class TC_22_EmptyEmail extends BaseTest {
             page.clickSubmit();
             String actualError = page.getErrorMessage();
             System.out.println("Validation Error: " + actualError);
+            BaseTest.takeScreenShot(driver, "EmptyEmail");
             Assert.assertTrue(
                     actualError.length() > 0,
                     "Validation message was not displayed");

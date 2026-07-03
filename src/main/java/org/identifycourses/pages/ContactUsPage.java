@@ -19,39 +19,28 @@ public class ContactUsPage {
         }
         @FindBy(id = "FirstName")
          WebElement txtFirstName;
-
         @FindBy(id = "LastName")
          WebElement txtLastName;
-
         @FindBy(id = "Email")
          WebElement txtEmail;
-
         @FindBy(id = "Phone")
          WebElement txtPhone;
-
         @FindBy(id = "Company")
         WebElement txtInstitutionName;
-
         @FindBy(xpath = "//button[@type='submit']")
          WebElement btnSubmit;
-
         @FindBy(id = "ValidMsgEmail")
          WebElement txtErrorMessage;
-
         @FindBy(xpath = "//select[@id='Country']")
         WebElement drpCountry;
         @FindBy(id="State")
         WebElement drpState;
-
         @FindBy(id = "Institution_Type__c")
         WebElement drpInstitutionType;
-
         @FindBy(id = "Self_Reported_Needs__c")
         WebElement drpNeeds;
-
         @FindBy(id = "Title")
         WebElement drpJobRole;
-
         @FindBy(id = "Department")
         WebElement drpDepartment;
 
@@ -71,11 +60,9 @@ public class ContactUsPage {
         public void enterPhone(String phone) {
             txtPhone.sendKeys(phone);
         }
-
         public void enterInstitutionName(String institutionName) {
             txtInstitutionName.sendKeys(institutionName);
         }
-
         public void selectInstutionType(String institutionType) {
             Select select = new Select(drpInstitutionType);
             select.selectByVisibleText(institutionType);

@@ -10,7 +10,6 @@ public class TC_01_SearchValid extends BaseTest {
 
     @Test
     public void searchValidKeyword() {
-
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("Web Development");

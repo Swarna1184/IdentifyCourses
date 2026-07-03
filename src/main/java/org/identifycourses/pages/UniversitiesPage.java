@@ -29,7 +29,6 @@ public class UniversitiesPage {
         try {
             forUniversitiesLink.click();
         } catch (Exception e) {
-            // Fallback JS click if normal click is intercepted
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", forUniversitiesLink);
         }
     }
@@ -53,7 +52,6 @@ public class UniversitiesPage {
         try {
             wait.until(d -> ((JavascriptExecutor) d)
                     .executeScript("return document.readyState").equals("complete"));
-
             String url   = driver.getCurrentUrl().toLowerCase();
             String title = driver.getTitle().toLowerCase();
             if (url.contains("campus") || url.contains("universities")) {
@@ -65,7 +63,6 @@ public class UniversitiesPage {
                 return true;
             }
             return false;
-
         } catch (Exception e) {
             System.out.println(" Verification failed: " + e.getMessage());
             return false;

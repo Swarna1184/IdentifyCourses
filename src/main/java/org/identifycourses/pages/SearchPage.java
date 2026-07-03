@@ -41,7 +41,6 @@ public class SearchPage {
     List<WebElement> learningHours;
     @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
     List<WebElement> ratings;
-
     private void safeClick(WebElement element) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element)).click();
@@ -49,7 +48,6 @@ public class SearchPage {
             js.executeScript("arguments[0].click();", element);
         }
     }
-
     public void applyBeginnerFilter() {
         js.executeScript("window.scrollBy(0,500)");
         WebElement filter = wait.until(ExpectedConditions.visibilityOf(filterButton));
