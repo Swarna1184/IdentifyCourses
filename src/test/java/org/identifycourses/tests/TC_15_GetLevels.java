@@ -1,5 +1,6 @@
 package org.identifycourses.tests;
 
+import java.io.IOException;
 import java.util.List;
 import org.identifycourses.pages.LanguageLearningPage;
 import org.testng.Assert;
@@ -10,7 +11,7 @@ import utilities.ExcelUtils;
 public class TC_15_GetLevels extends BaseTest {
 
     @Test
-    public void extractLevels() {
+    public void extractLevels() throws IOException {
         LanguageLearningPage lp = new LanguageLearningPage(driver);
         lp.navigateToLanguageLearning();
         lp.closePopupIfPresent();
@@ -19,6 +20,7 @@ public class TC_15_GetLevels extends BaseTest {
         for(String level : levels) {
             System.out.println(level);
         }
+        BaseTest.takeScreenShot(driver, "Levels");
         ExcelUtils.writeLevelsToExcel(levels);
         Assert.assertFalse(
                 levels.isEmpty(),
