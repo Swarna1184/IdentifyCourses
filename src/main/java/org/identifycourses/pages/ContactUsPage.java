@@ -92,7 +92,6 @@ public class ContactUsPage {
         }
 
 
-
         public void selectNeeds(String needs) {
             Select select = new Select(drpNeeds);
             select.selectByVisibleText(needs.trim());
@@ -128,18 +127,18 @@ public class ContactUsPage {
             btnSubmit.click();
         }
 
-            public String getErrorMessage() {
-                wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-                wait.until(ExpectedConditions.visibilityOf(txtErrorMessage));
-                WebDriverWait wait =
-                        new WebDriverWait(driver, Duration.ofSeconds(10));
-                wait.until(
-                        ExpectedConditions.visibilityOf(txtErrorMessage));
+        public String getErrorMessage() {
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(txtErrorMessage));
+            WebDriverWait wait =
+                    new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(
+                    ExpectedConditions.visibilityOf(txtErrorMessage));
 
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript(
-                        "arguments[0].scrollIntoView({block:'center'});",
-                        txtErrorMessage);
-                return txtErrorMessage.getText();
-            }
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript(
+                    "arguments[0].scrollIntoView({block:'center'});",
+                    txtErrorMessage);
+            return txtErrorMessage.getText();
+        }
 }

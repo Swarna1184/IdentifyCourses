@@ -1,19 +1,11 @@
 package org.identifycourses.tests;
 
 import basetest.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.identifycourses.pages.UniversitiesPage;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class TC_16_Universities extends BaseTest {
-
     @Test
     public void validateNavigationToForUniversities() {
         UniversitiesPage universitiesPage = new UniversitiesPage(driver);
