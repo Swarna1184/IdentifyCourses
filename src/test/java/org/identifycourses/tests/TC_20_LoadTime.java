@@ -17,7 +17,7 @@ public class TC_20_LoadTime extends BaseTest {
 
     UniversitiesPage page;
 
-    @Test(priority = 20, description = "TC_20 - Verify page load + Click Contact Us")
+    @Test
     public void verifyPageLoadAndContactUsClick() {
         page = new UniversitiesPage(driver);
         page.goToUniversitiesPage();

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class TC_18_PageLoad extends BaseTest {
     UniversitiesPage page;
-    @Test(priority = 18, description = "TC_18 - Verify Campus page loads correctly")
+    @Test
     public void verifyCampusPageLoad() {
         page = new UniversitiesPage(driver);
         page.goToUniversitiesPage();

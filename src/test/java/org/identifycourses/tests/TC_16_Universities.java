@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class TC_16_Universities extends BaseTest {
     UniversitiesPage page;
 
-    @Test(priority = 16, description = "TC_16 - Navigate to For Universities")
+    @Test
     public void validateNavigationToForUniversities() {
         page = new UniversitiesPage(driver);
         page.clickForUniversities();

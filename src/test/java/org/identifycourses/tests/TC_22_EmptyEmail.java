@@ -8,7 +8,7 @@ import utilities.ConfigReader;
 
 import java.io.IOException;
 
-public class TC_22_EmptyEmail extends BaseTest {
+public class TC_22_EmptyEmail extends TC_20_LoadTime {
 
         @Test
         public void validateEmptyEmail() throws IOException {

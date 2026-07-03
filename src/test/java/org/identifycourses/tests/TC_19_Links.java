@@ -10,7 +10,7 @@ import java.util.List;
 
 public class TC_19_Links extends BaseTest {
     UniversitiesPage page;
-    @Test(priority = 19, description = "TC_19 - Verify navigation links working")
+    @Test
     public void verifyNavigationLinks() {
         page = new UniversitiesPage(driver);
         page.goToUniversitiesPage();

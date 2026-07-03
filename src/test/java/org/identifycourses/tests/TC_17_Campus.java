@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class TC_17_Campus extends BaseTest {
     UniversitiesPage page;
-    @Test(priority = 17, description = "TC_17 - Verify Courses for Campus section visible")
+    @Test
     public void verifyCampusSectionVisible() {
         page = new UniversitiesPage(driver);
         page.goToUniversitiesPage();

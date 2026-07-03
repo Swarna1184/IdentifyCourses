@@ -44,7 +44,6 @@ public class SearchPage {
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
 
-
     @FindBy(xpath = "//h3")
     List<WebElement> courseNames;
 
