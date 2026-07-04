@@ -8,9 +8,9 @@
         <classes>
             <class name="org.identifycourses.tests.TC_01_SearchValid"/>
             <class name="org.identifycourses.tests.TC_02_SearchPartial"/>
-            <!--<class name="org.identifycourses.tests.TC_03_SearchInvalid"/>
-            <class name="org.identifycourses.tests.TC_04_SearchEmpty"/>-->
-           <!-- <class name="org.identifycourses.tests.TC_05_SearchSpecial"/>
+            <class name="org.identifycourses.tests.TC_03_SearchInvalid"/>
+            <class name="org.identifycourses.tests.TC_04_SearchEmpty"/>
+            <class name="org.identifycourses.tests.TC_05_SearchSpecial"/>
             <class name="org.identifycourses.tests.TC_06_BeginnerFilter"/>
             <class name="org.identifycourses.tests.TC_07_EnglishFilter"/>
             <class name="org.identifycourses.tests.TC_08_BothFilters"/>
@@ -30,7 +30,7 @@
             <class name="org.identifycourses.tests.TC_22_EmptyEmail"/>
             <class name="org.identifycourses.tests.Tc_23_ErrorMessageDisplay"/>
             <class name="org.identifycourses.tests.TC_24_CorrectEmail"/>
-            <class name="org.identifycourses.tests.TC_25_SubmitButton"/>-->
+            <class name="org.identifycourses.tests.TC_25_SubmitButton"/>
         </classes>
     </test>
 </suite>
