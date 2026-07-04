@@ -19,6 +19,6 @@ public class TC_17_Campus extends BaseTest {
                 "Courses for Campus section not displayed");
         Assert.assertFalse(title.isEmpty(),
                 "Campus page title is empty");
-        System.out.println("TC_17 PASSED");
+        logger.info("Courses for campus section is displayed successfully");
     }
 }

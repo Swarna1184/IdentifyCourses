@@ -20,6 +20,7 @@ public class TC_15_GetLevels extends BaseTest {
         for(String level : levels) {
             System.out.println(level);
         }
+        logger.info("Retrieved all the levels");
         BaseTest.takeScreenShot(driver, "Levels");
         ExcelUtils.writeLevelsToExcel(levels);
         Assert.assertFalse(

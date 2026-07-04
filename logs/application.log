@@ -1,0 +1,97 @@
+
+2026-07-04 10:56:36 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\OneDrive - Cognizant\Documents\Project\IdentifyCourses\testng.xml
+
+2026-07-04 10:56:44 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 10:56:52 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 10:57:01 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 10:57:08 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 10:57:17 [main] INFO  TC_03_SearchInvalid - Application launched successfully
+2026-07-04 10:57:24 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
+2026-07-04 10:57:35 [main] INFO  TC_04_SearchEmpty - Application launched successfully
+2026-07-04 10:57:40 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
+2026-07-04 10:57:40 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
+2026-07-04 10:57:58 [main] INFO  TC_05_SearchSpecial - Application launched successfully
+2026-07-04 10:58:03 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
+2026-07-04 10:58:16 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-04 10:58:26 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
+2026-07-04 10:58:37 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-04 10:58:46 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-04 10:58:56 [main] INFO  TC_08_BothFilters - Application launched successfully
+2026-07-04 10:59:07 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
+2026-07-04 10:59:16 [main] INFO  TC_09_ValidateCourses - Application launched successfully
+2026-07-04 10:59:26 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
+2026-07-04 10:59:36 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 10:59:49 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 11:00:00 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-04 11:00:10 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-04 11:00:21 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-04 11:00:41 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-04 11:00:59 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-04 11:01:27 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-04 11:01:46 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-04 11:01:57 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-04 11:02:08 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-04 11:02:18 [main] INFO  TC_15_GetLevels - Retrieved all the levels
+2026-07-04 11:02:30 [main] INFO  TC_16_Universities - Application launched successfully
+2026-07-04 11:02:36 [main] INFO  TC_16_Universities - Navigation to university page is validated
+2026-07-04 11:02:46 [main] INFO  TC_17_Campus - Application launched successfully
+2026-07-04 11:02:53 [main] INFO  TC_17_Campus - Courses for campus section is displayed successfully
+2026-07-04 11:03:02 [main] INFO  TC_18_PageLoad - Application launched successfully
+2026-07-04 11:03:07 [main] INFO  TC_18_PageLoad - Courses for campus is loaded successfully
+2026-07-04 11:03:18 [main] INFO  TC_19_Links - Application launched successfully
+2026-07-04 11:03:23 [main] INFO  TC_19_Links - Navigation to contact page link is working successfully
+2026-07-04 11:03:33 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-04 11:04:04 [main] INFO  TC_21_InvalidEmail - Application launched successfully
+2026-07-04 11:04:27 [main] INFO  TC_21_InvalidEmail - Validation Error : Please enter your work email address
+2026-07-04 11:04:44 [main] INFO  TC_22_EmptyEmail - Application launched successfully
+2026-07-04 11:05:01 [main] INFO  TC_22_EmptyEmail - Validation Error: Must be valid email.
+example@yourdomain.com
+2026-07-04 11:05:13 [main] INFO  Tc_23_ErrorMessageDisplay - Application launched successfully
+2026-07-04 11:05:42 [main] INFO  Tc_23_ErrorMessageDisplay - Displayed Error Message: Please enter your work email address
+2026-07-04 11:05:59 [main] INFO  TC_24_CorrectEmail - Application launched successfully
+2026-07-04 11:06:23 [main] INFO  TC_24_CorrectEmail - The form is submitted succesfully and the current URLhttps://www.coursera.org/campus/thank-you
+2026-07-04 11:06:39 [main] INFO  TC_25_SubmitButton - Application launched successfully
+2026-07-04 11:06:57 [main] INFO  TC_25_SubmitButton - Submit Button Clicked Successfully
+2026-07-04 11:51:28 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 11:51:35 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 11:51:47 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 11:57:27 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 11:57:34 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 11:57:48 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 11:58:22 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 11:58:27 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 11:58:42 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 12:00:48 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 12:00:54 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 12:01:07 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 12:01:32 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 12:01:37 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-04 12:01:47 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-04 12:02:02 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 12:02:10 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 12:02:23 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 12:26:28 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:26:35 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:26:43 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 12:26:51 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:26:58 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 12:28:19 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 12:28:25 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 12:28:39 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully

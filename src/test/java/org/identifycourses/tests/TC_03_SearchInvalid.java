@@ -21,8 +21,9 @@ public class TC_03_SearchInvalid extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.urlContains("search"));
         String currentUrl = driver.getCurrentUrl();
-        System.out.println("Search URL: " + currentUrl);
+        logger.info("Search URL: {}", currentUrl);
         Assert.assertTrue(currentUrl.contains("search"),
                 "URL should navigate to search results page after search execution.");
     }
 }
+

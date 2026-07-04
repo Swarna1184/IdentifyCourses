@@ -1,19 +1,20 @@
 package org.identifycourses.tests;
 
+import basetest.BaseTest;
+import org.identifycourses.pages.HomePage;
+import org.identifycourses.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import basetest.BaseTest;
-import org.identifycourses.pages.SearchPage;
-
 import java.io.IOException;
 
 public class TC_08_BothFilters extends BaseTest {
 
     @Test
     public void verifyBeginnerAndEnglishCourses() throws IOException {
-
-        SearchPage searchPage = new SearchPage(driver);
-        searchPage.searchCourse("Web Development");
+        HomePage home = new HomePage(driver);
+        home.clickSearchBox();
+        home.enterSearchKeyword("Web Development");
+        SearchPage searchPage = home.clickSearchIcon();
         Assert.assertTrue(
                 searchPage.areResultsDisplayed(),
                 "Search results not displayed"
@@ -23,7 +24,11 @@ public class TC_08_BothFilters extends BaseTest {
                 searchPage.areResultsDisplayed(),
                 "Beginner + English filtered results not displayed"
         );
-        BaseTest.takeScreenShot(driver, "BothFilter");
-        System.out.println("TC_08 PASSED");
+        Assert.assertTrue(
+                searchPage.getCourseCount() >= 2,
+                "Less than 2 courses found after applying filters"
+        );
+        BaseTest.takeScreenShot(driver, "BothFilters");
+        logger.info("Both Beginner and English filter executed succesfully");
     }
 }

@@ -13,7 +13,7 @@ public class TC_12_CountLanguages extends BaseTest {
         lp.navigateToLanguageLearning();
         lp.closePopupIfPresent();
         int count = lp.getLanguageCount();
-        System.out.println("Total Languages Available : " + count);
+        logger.info("Total languages count extracted");
         Assert.assertTrue(count > 0,
                 "No languages were extracted.");
     }

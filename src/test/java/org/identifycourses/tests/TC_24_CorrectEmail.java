@@ -33,7 +33,7 @@ public class TC_24_CorrectEmail extends TC_20_LoadTime {
                 new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.urlContains("thank-you"));
         BaseTest.takeScreenShot(driver, "CorrectEmail");
-        System.out.println("The form is submitted succesfully and the current URL"+ driver.getCurrentUrl());
+        logger.info("The form is submitted succesfully and the current URL{}", driver.getCurrentUrl());
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("thank-you"),
                 "Thank You page is not displayed");

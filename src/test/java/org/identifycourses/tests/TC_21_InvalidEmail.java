@@ -25,11 +25,12 @@ public class TC_21_InvalidEmail extends TC_20_LoadTime {
         page.selectNeeds(ConfigReader.getProperty("needs"));
         page.clickSubmit();
         String actualError = page.getErrorMessage();
-        System.out.println("Validation Error : " + actualError);
+        logger.info("Validation Error : {}", actualError);
         BaseTest.takeScreenShot(driver, "InvalidEmail");
         Assert.assertTrue(
                 actualError.contains("Please enter your work email address"),
                 "Email validation message not displayed");
+
 
     }
 }

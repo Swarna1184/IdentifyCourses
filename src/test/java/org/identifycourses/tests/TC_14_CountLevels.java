@@ -13,7 +13,7 @@ public class TC_14_CountLevels extends BaseTest {
         lp.navigateToLanguageLearning();
         lp.closePopupIfPresent();
         int count = lp.getLevelCount();
-        System.out.println("Total Levels Available : " + count);
+        logger.info("Total level count extracted : {}", count);
         Assert.assertTrue(
                 count > 0,
                 "No levels were extracted");

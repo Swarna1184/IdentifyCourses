@@ -1,27 +1,27 @@
 package org.identifycourses.tests;
-
+import basetest.BaseTest;
+import org.identifycourses.pages.HomePage;
+import org.identifycourses.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import basetest.BaseTest;
-import org.identifycourses.pages.SearchPage;
-
 import java.io.IOException;
 
 public class TC_09_ValidateCourses extends BaseTest {
 
     @Test
     public void validateMinimumTwoCoursesDisplayed() throws IOException {
-        SearchPage searchPage = new SearchPage(driver);
-        searchPage.searchCourse("Web Development");
+
+        HomePage home = new HomePage(driver);
+        home.clickSearchBox();
+        home.enterSearchKeyword("Web Development");
+        SearchPage searchPage = home.clickSearchIcon();
         searchPage.applyBothFilters();
         int courseCount = searchPage.getCourseCount();
         Assert.assertTrue(
                 courseCount >= 2,
                 "Less than 2 courses found. Actual count: " + courseCount
         );
-        BaseTest.takeScreenShot(driver, "ValidateCourse");
-        System.out.println(
-                "TC_09 PASSED - Found " + courseCount + " courses"
-        );
+        BaseTest.takeScreenShot(driver, "ValidateCourses");
+        logger.info("Courses validated and - Found {} courses", courseCount);
     }
 }
