@@ -26,6 +26,8 @@ public class TC_10_ExtractDetails extends BaseTest {
         List<Map<String,String>> courses =
                 searchPage.getCourseDetails();
         ExcelUtils.writeCourseDetailsToExcel(courses);
+        System.out.println("Extracting from page: "
+                + driver.getCurrentUrl());
         BaseTest.takeScreenShot(driver, "ExtractDetails");
         logger.info("Courses details are extracted successfully");
     }

@@ -41,7 +41,6 @@ public class BaseTest {
         driver.get(ConfigReader.getProperty("url"));
         logger.info("Application launched successfully");
 
-
     }
 
 

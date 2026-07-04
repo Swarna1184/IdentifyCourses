@@ -40,24 +40,6 @@ public class SearchPage extends CommonCode {
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
 
-    /*@FindBy(xpath = "//h3")
-    List<WebElement> courseNames;
-
-    @FindBy(xpath = "//*[contains(text(),'hours')]")
-    List<WebElement> learningHours;
-
-    @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
-    List<WebElement> ratings;*/
-
-    /*@FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
-    List<WebElement> courseNames;
-
-    @FindBy(xpath = "//*[contains(text(),'hours')]")
-    List<WebElement> learningHours;
-
-    @FindBy(xpath = "//main//section//div[.//h3 and .//*[contains(text(),'hours')]]")
-    List<WebElement> ratings;*/
-
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//h3")
     List<WebElement> courseNames;
 
@@ -98,7 +80,6 @@ public class SearchPage extends CommonCode {
     public boolean areResultsDisplayed() {
         return courseCards.size() > 0;
     }
-
     public void applyEnglishFilter() {
         scrollIntoView(filterButton);
         safeClick(filterButton);
@@ -147,17 +128,12 @@ public class SearchPage extends CommonCode {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             try {
                 String cardText = card.getText();
-
-                // Rating
                 java.util.regex.Pattern ratingPattern =
                         java.util.regex.Pattern.compile("★\\s*([0-9]+\\.?[0-9]*)");
-
                 java.util.regex.Matcher ratingMatcher =
                         ratingPattern.matcher(cardText);
-
                 if (ratingMatcher.find()) {
                     rating = ratingMatcher.group(1);
                 }
