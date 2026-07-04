@@ -22,3 +22,4 @@ public class TC_01_SearchValid extends BaseTest {
                 "Course count should be > 0 for a valid keyword.");
     }
 }
+

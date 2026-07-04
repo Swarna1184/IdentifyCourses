@@ -26,3 +26,4 @@ public class TC_03_SearchInvalid extends BaseTest {
                 "URL should navigate to search results page after search execution.");
     }
 }
+

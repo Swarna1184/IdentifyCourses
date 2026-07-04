@@ -23,3 +23,4 @@ public class TC_02_SearchPartial extends BaseTest {
                 "Course count should be > 0 for partial keyword.");
     }
 }
+
