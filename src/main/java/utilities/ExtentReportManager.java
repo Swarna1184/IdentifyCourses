@@ -4,6 +4,10 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.*;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
 public class ExtentReportManager implements ITestListener {
     private ExtentReports extent;
     private ExtentTest test;
@@ -43,5 +47,13 @@ public class ExtentReportManager implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         extent.flush();
+        String pathOfExtentReport=System.getProperty("user.dir") + "/reports/ExtentReport.html";
+        File extentReport=new File(pathOfExtentReport);
+        try{
+            Desktop.getDesktop().browse(extentReport.toURI());
+        }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
