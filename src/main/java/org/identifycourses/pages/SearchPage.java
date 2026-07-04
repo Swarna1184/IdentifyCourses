@@ -12,40 +12,28 @@ public class SearchPage extends CommonCode {
     public SearchPage(WebDriver driver) {
         super(driver);
     }
-
     @FindBy(xpath = "//input[@type='search' or @type='text']")
     WebElement searchBox;
-
     @FindBy(xpath = "//button[contains(.,'Filter')]")
     WebElement filterButton;
-
     @FindBy(xpath = "//span[contains(text(),'Level')]")
     WebElement levelDropdown;
-
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'Beginner')]")
     WebElement beginnerCheckbox;
-
     @FindBy(xpath = "//button[contains(.,'View')]")
     WebElement viewButton;
-
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
     List<WebElement> courseCards;
-
     @FindBy(xpath = "//span[contains(text(),'Language')]")
     WebElement languageDropdown;
-
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
-
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//h3")
     List<WebElement> courseNames;
-
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(text(),'hours') or contains(text(),'Weeks') or contains(text(),'Months')]")
     List<WebElement> learningHours;
-
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(@aria-label,'out of 5 stars')]")
     List<WebElement> ratings;
-
     private void safeClick(WebElement element) {
         try {
             clickElement(element);
@@ -73,7 +61,6 @@ public class SearchPage extends CommonCode {
         waitForAllElementsVisible(courseCards);
         System.out.println("Beginner filter applied");
     }
-
     public boolean areResultsDisplayed() {
         return courseCards.size() > 0;
     }
@@ -153,9 +140,7 @@ public class SearchPage extends CommonCode {
             System.out.println(course);
             courses.add(course);
         }
-
         System.out.println("Final Course List = " + courses);
-
         return courses;
     }
 }
