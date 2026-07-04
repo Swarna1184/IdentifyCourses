@@ -83,3 +83,15 @@ example@yourdomain.com
 
 2026-07-04 12:02:10 [main] INFO  TC_10_ExtractDetails - Application launched successfully
 2026-07-04 12:02:23 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 12:26:28 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:26:35 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:26:43 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 12:26:51 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:26:58 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 12:28:19 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-04 12:28:25 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-04 12:28:39 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
