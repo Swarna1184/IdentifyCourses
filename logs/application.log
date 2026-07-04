@@ -95,3 +95,34 @@ example@yourdomain.com
 
 2026-07-04 12:28:25 [main] INFO  TC_10_ExtractDetails - Application launched successfully
 2026-07-04 12:28:39 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 12:40:33 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:40:39 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:40:45 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 12:40:53 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:40:59 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 12:41:15 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:41:26 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:41:32 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 12:41:49 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:41:55 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 12:42:35 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:42:39 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:43:09 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:44:16 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:44:21 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:44:45 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:47:08 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:47:13 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:47:18 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 12:47:26 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:47:31 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
