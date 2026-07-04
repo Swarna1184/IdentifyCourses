@@ -17,6 +17,6 @@ public class TC_16_Universities extends BaseTest {
         System.out.println("Title : " + page.getPageTitle());
         Assert.assertTrue(page.isUniversitiesPageDisplayed(),
                 "For Universities page not displayed");
-        System.out.println("TC_16 PASSED");
+        logger.info("Navigation to university page is validated");
     }
 }

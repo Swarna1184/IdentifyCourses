@@ -18,6 +18,7 @@ public class TC_13_GetLanguages extends BaseTest {
         String url = driver.getCurrentUrl();
         System.out.println("Current URL: " + url);
         List<String> languages = langPage.getLanguages();
+        logger.info("Retrieved all the languages");
         System.out.println("Languages Found: " + languages);
         BaseTest.takeScreenShot(driver, "Languages");
         Assert.assertFalse(

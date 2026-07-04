@@ -35,6 +35,6 @@ public class TC_25_SubmitButton extends TC_20_LoadTime {
         Assert.assertTrue(
                 page.isSubmitButtonEnabled(),
                 "Submit button is disabled");
-        System.out.println("Submit Button Clicked Successfully");
+        logger.info("Submit Button Clicked Successfully");
     }
 }

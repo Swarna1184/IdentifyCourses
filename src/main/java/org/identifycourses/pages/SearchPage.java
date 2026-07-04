@@ -4,7 +4,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
 import java.util.List;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 public class SearchPage extends CommonCode {
 
     public SearchPage(WebDriver driver) {
@@ -35,13 +37,13 @@ public class SearchPage extends CommonCode {
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
 
-    @FindBy(xpath = "//h3")
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//h3")
     List<WebElement> courseNames;
 
-    @FindBy(xpath = "//*[contains(text(),'hours')]")
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(text(),'hours') or contains(text(),'Weeks') or contains(text(),'Months')]")
     List<WebElement> learningHours;
 
-    @FindBy(xpath = "//*[contains(@aria-label,'rating') or contains(text(),'Rating')]")
+    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(@aria-label,'out of 5 stars')]")
     List<WebElement> ratings;
 
     private void safeClick(WebElement element) {
@@ -51,7 +53,6 @@ public class SearchPage extends CommonCode {
             clickByJS(element);
         }
     }
-
     public void searchCourse(String course) {
         WebElement box = waitForVisibility(searchBox);
         box.clear();
@@ -76,7 +77,6 @@ public class SearchPage extends CommonCode {
     public boolean areResultsDisplayed() {
         return courseCards.size() > 0;
     }
-
     public void applyEnglishFilter() {
         scrollIntoView(filterButton);
         safeClick(filterButton);
@@ -111,29 +111,51 @@ public class SearchPage extends CommonCode {
         System.out.println("Total courses found: " + count);
         return count;
     }
-
-    public void extractCourseDetails() {
+    public List<Map<String, String>> getCourseDetails() {
+        List<Map<String, String>> courses = new ArrayList<>();
         waitForAllElementsVisible(courseCards);
         int count = Math.min(2, courseCards.size());
-        System.out.println("\n===== TOP COURSES =====");
         for (int i = 0; i < count; i++) {
-            String courseName = courseNames.get(i).getText();
+            WebElement card = courseCards.get(i);
+            String courseName = "N/A";
             String hours = "N/A";
             String rating = "N/A";
             try {
-                hours = learningHours.get(i).getText();
+                courseName = card.findElement(By.xpath(".//h3")).getText();
             } catch (Exception e) {
-                System.out.println("Hours not found");
+                e.printStackTrace();
             }
             try {
-                rating = ratings.get(i).getText();
+                String cardText = card.getText();
+                java.util.regex.Pattern ratingPattern =
+                        java.util.regex.Pattern.compile("★\\s*([0-9]+\\.?[0-9]*)");
+                java.util.regex.Matcher ratingMatcher =
+                        ratingPattern.matcher(cardText);
+                if (ratingMatcher.find()) {
+                    rating = ratingMatcher.group(1);
+                }
+                java.util.regex.Pattern durationPattern =
+                        java.util.regex.Pattern.compile(
+                                "(\\d+\\s*-\\s*\\d+\\s*(Weeks|Months))|(\\d+(\\.\\d+)?\\s*hours)");
+                java.util.regex.Matcher durationMatcher =
+                        durationPattern.matcher(cardText);
+
+                if (durationMatcher.find()) {
+                    hours = durationMatcher.group();
+                }
             } catch (Exception e) {
-                System.out.println("Rating not found");
+                e.printStackTrace();
             }
-            System.out.println("\nCourse " + (i + 1));
-            System.out.println("Name   : " + courseName);
-            System.out.println("Hours  : " + hours);
-            System.out.println("Rating : " + rating);
+            Map<String, String> course = new HashMap<>();
+            course.put("Name", courseName);
+            course.put("Hours", hours);
+            course.put("Rating", rating);
+            System.out.println(course);
+            courses.add(course);
         }
+
+        System.out.println("Final Course List = " + courses);
+
+        return courses;
     }
 }

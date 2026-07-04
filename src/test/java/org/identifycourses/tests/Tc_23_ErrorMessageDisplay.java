@@ -28,8 +28,7 @@ public class Tc_23_ErrorMessageDisplay extends  TC_20_LoadTime{
             page.selectNeeds(ConfigReader.getProperty("needs"));
             page.clickSubmit();
             String actualError = page.getErrorMessage();
-            System.out.println("Displayed Error Message: "
-                    + actualError);
+            logger.info("Displayed Error Message: {}", actualError);
             BaseTest.takeScreenShot(driver, "ErrorMessage");
             Assert.assertEquals(
                     actualError,

@@ -16,10 +16,11 @@ public class TC_02_SearchPartial extends BaseTest {
         SearchPage search = home.clickSearchIcon();
         boolean resultsDisplayed = search.areResultsDisplayed();
         int count = search.getCourseCount();
-        System.out.println("Total courses for 'Web Deve': " + count);
+        logger.info("Total courses for 'Web Deve': {}", count);
         Assert.assertTrue(resultsDisplayed,
                 "Partial keyword should still show matching results.");
         Assert.assertTrue(count > 0,
                 "Course count should be > 0 for partial keyword.");
     }
 }
+

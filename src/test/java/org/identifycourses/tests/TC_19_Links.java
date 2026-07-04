@@ -27,6 +27,6 @@ public class TC_19_Links extends BaseTest {
         System.out.println("Total Working Links: " + workingLinks);
         Assert.assertTrue(workingLinks > 0,
                 "No working navigation links found");
-        System.out.println("TC_19 PASSED");
+        logger.info("Navigation to contact page link is working successfully");
     }
 }

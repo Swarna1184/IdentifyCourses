@@ -19,6 +19,6 @@ public class TC_18_PageLoad extends BaseTest {
                 "Campus page URL incorrect");
         Assert.assertFalse(title.isEmpty(),
                 "Campus page title is empty");
-        System.out.println("TC_18 PASSED");
+       logger.info("Courses for campus is loaded successfully");
     }
 }

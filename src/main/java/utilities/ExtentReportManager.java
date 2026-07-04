@@ -19,14 +19,12 @@ public class ExtentReportManager implements ITestListener {
         extent.setSystemInfo("Environment", "QA");
         extent.setSystemInfo("Tester", "Ajitha");
     }
-
     public void onTestSuccess(ITestResult result) {
 
         test = extent.createTest(result.getName()); // create a new enty in the report
         test.log(Status.PASS, "Test case PASSED is:" + result.getName()); // update status p/f/s
 
     }
-
     public void onTestFailure(ITestResult result) {
 
         test = extent.createTest(result.getName());
