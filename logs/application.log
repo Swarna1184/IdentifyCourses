@@ -95,3 +95,17 @@ example@yourdomain.com
 
 2026-07-04 12:28:25 [main] INFO  TC_10_ExtractDetails - Application launched successfully
 2026-07-04 12:28:39 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-04 12:33:02 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\OneDrive - Cognizant\Documents\Project\IdentifyCourses\testng.xml
+
+2026-07-04 12:33:19 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 12:33:24 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 12:33:33 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 12:33:39 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 13:13:18 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\OneDrive - Cognizant\Documents\Project\IdentifyCourses\testng.xml
+
+2026-07-04 13:13:23 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 13:14:29 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 13:15:15 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 13:15:49 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
