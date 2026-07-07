@@ -45,9 +45,4 @@ public class CommonCode {
         waitForClickable(element).click();
     }
 
-    /*public void scrollAndClick(WebElement element) {
-        scrollIntoView(element);
-        waitForClickable(element);
-        clickByJS(element);
-    }*/
 }

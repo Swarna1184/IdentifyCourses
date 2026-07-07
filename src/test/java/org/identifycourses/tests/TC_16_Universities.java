@@ -13,8 +13,8 @@ public class TC_16_Universities extends BaseTest {
         page = new UniversitiesPage(driver);
         page.clickForUniversities();
         page.switchToNewWindow();
-        System.out.println("URL   : " + page.getCurrentUrl());
-        System.out.println("Title : " + page.getPageTitle());
+        logger.info("URL   : {}", page.getCurrentUrl());
+        logger.info("Title : {}", page.getPageTitle());
         Assert.assertTrue(page.isUniversitiesPageDisplayed(),
                 "For Universities page not displayed");
         logger.info("Navigation to university page is validated");

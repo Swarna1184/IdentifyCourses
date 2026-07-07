@@ -23,9 +23,9 @@ public class TC_20_LoadTime extends BaseTest {
         page.goToUniversitiesPage();
         long startTime = System.currentTimeMillis();
         long loadTimeSec = (System.currentTimeMillis() - startTime) / 1000;
-        System.out.println("Campus URL : " + page.getCurrentUrl());
-        System.out.println("Title      : " + page.getPageTitle());
-        System.out.println("Load Time  : " + loadTimeSec + " sec");
+        logger.info("Campus URL : {}", page.getCurrentUrl());
+        logger.info("Title      : {}", page.getPageTitle());
+        logger.info("Load Time  : {} sec", loadTimeSec);
         Assert.assertTrue(page.getCurrentUrl().toLowerCase().contains("campus"),
                 "Campus page not loaded");
         Assert.assertTrue(loadTimeSec <= 15,
@@ -40,20 +40,22 @@ public class TC_20_LoadTime extends BaseTest {
                 By.xpath("//a[normalize-space()='Contact us'] | //button[normalize-space()='Contact us']")
         ));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", contactBtn);
-        System.out.println(" Contact Us clicked");
+        logger.info(" Contact Us clicked");
+
         try { Thread.sleep(3000); } catch (InterruptedException ignored) {}
         Set<String> allWindows = driver.getWindowHandles();
+
         for (String w : allWindows) {
             if (!w.equals(parentWindow)) {
                 driver.switchTo().window(w);
                 break;
             }
         }
-        System.out.println("Contact Us URL   : " + driver.getCurrentUrl());
-        System.out.println("Contact Us Title : " + driver.getTitle());
+        logger.info("Contact Us URL   : {}", driver.getCurrentUrl());
+        logger.info("Contact Us Title : {}", driver.getTitle());
 
         Assert.assertFalse(driver.getCurrentUrl().isEmpty(),
                 "Contact Us page not opened");
-        System.out.println(" TC_20 PASSED");
+        logger.info("Load time fetched successfully");
     }
 }
