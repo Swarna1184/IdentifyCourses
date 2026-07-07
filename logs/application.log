@@ -109,3 +109,42 @@ example@yourdomain.com
 2026-07-04 13:14:29 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
 2026-07-04 13:15:15 [main] INFO  TC_02_SearchPartial - Application launched successfully
 2026-07-04 13:15:49 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 23:20:33 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 23:20:40 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 23:20:47 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 23:20:57 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 23:21:03 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 23:27:14 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 23:27:19 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 23:27:45 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 23:29:25 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 23:29:31 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 23:29:46 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 23:29:56 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 23:30:04 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-04 23:56:29 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-04 23:56:39 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-04 23:56:45 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-04 23:56:54 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-04 23:57:00 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-06 12:38:04 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-06 12:38:12 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-06 12:38:32 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-06 12:38:55 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-06 12:39:16 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-06 12:39:28 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-06 12:39:51 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-06 12:40:02 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-06 12:40:26 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-06 12:40:41 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-06 12:40:57 [main] INFO  TC_15_GetLevels - Retrieved all the levels
