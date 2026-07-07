@@ -148,3 +148,34 @@ example@yourdomain.com
 2026-07-06 12:40:26 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
 2026-07-06 12:40:41 [main] INFO  TC_15_GetLevels - Application launched successfully
 2026-07-06 12:40:57 [main] INFO  TC_15_GetLevels - Retrieved all the levels
+2026-07-07 16:21:54 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-07 16:22:08 [main] INFO  TC_01_SearchValidTest - Application launched successfully
+2026-07-07 16:22:13 [main] INFO  TC_01_SearchValidTest - Total courses for 'Web Development': 12
+2026-07-07 16:22:22 [main] INFO  TC_02_SearchPartialTest - Application launched successfully
+2026-07-07 16:22:26 [main] INFO  TC_02_SearchPartialTest - Total courses for 'Web Deve': 12
+2026-07-07 16:24:04 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-07 16:24:14 [main] INFO  TC_01_SearchValidTest - Application launched successfully
+2026-07-07 16:24:42 [main] INFO  TC_02_SearchPartialTest - Application launched successfully
+2026-07-07 16:26:24 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-07 16:26:31 [main] INFO  TC_01_SearchValidTest - Application launched successfully
+2026-07-07 16:26:35 [main] INFO  TC_01_SearchValidTest - Total courses for 'Web Development': 12
+2026-07-07 16:26:54 [main] INFO  TC_02_SearchPartialTest - Application launched successfully
+2026-07-07 16:26:57 [main] INFO  TC_02_SearchPartialTest - Total courses for 'Web Deve': 12
+2026-07-07 16:31:10 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-07 16:31:16 [main] INFO  TC_01_SearchValidTest - Application launched successfully
+2026-07-07 16:31:33 [main] INFO  TC_02_SearchPartialTest - Application launched successfully
+2026-07-07 16:36:56 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497807\Project\IdentifyCourses\testng.xml
+
+2026-07-07 16:37:10 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-07 16:37:16 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-07 16:37:25 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-07 16:37:33 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
