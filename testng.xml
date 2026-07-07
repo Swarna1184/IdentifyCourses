@@ -6,8 +6,8 @@
     </listeners>
     <test name="CourseSearchTests">
         <classes>
-            <class name="org.identifycourses.tests.TC_01_SearchValid"/>
-            <class name="org.identifycourses.tests.TC_02_SearchPartial"/>
+            <class name="org.identifycourses.tests.TC_01_SearchValidTest"/>
+            <class name="org.identifycourses.tests.TC_02_SearchPartialTest"/>
             <class name="org.identifycourses.tests.TC_03_SearchInvalid"/>
             <class name="org.identifycourses.tests.TC_04_SearchEmpty"/>
             <class name="org.identifycourses.tests.TC_05_SearchSpecial"/>
