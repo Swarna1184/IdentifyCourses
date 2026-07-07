@@ -44,7 +44,6 @@ public class BaseTest {
     @AfterClass
     public void tearDown() {
           driver.quit();
-
     }
 
     public static void takeScreenShot(WebDriver driver, String fileName) throws IOException {
@@ -56,6 +55,5 @@ public class BaseTest {
             destination.delete();
         }
         FileHandler.copy(src, destination);
-
     }
 }
