@@ -5,22 +5,21 @@ import org.identifycourses.pages.HomePage;
 import org.identifycourses.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-public class TC_02_SearchPartial extends BaseTest {
+public class TC_01_SearchValidTest extends BaseTest {
 
     @Test
-    public void searchPartialKeyword() {
+    public void searchValidKeyword() {
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
-        home.enterSearchKeyword("Web Deve");
+        home.enterSearchKeyword("Web Development");
         SearchPage search = home.clickSearchIcon();
         boolean resultsDisplayed = search.areResultsDisplayed();
         int count = search.getCourseCount();
-        logger.info("Total courses for 'Web Deve': {}", count);
+        logger.info("Total courses for 'Web Development': {}", count);
         Assert.assertTrue(resultsDisplayed,
-                "Partial keyword should still show matching results.");
+                "Expected search results but none were displayed.");
         Assert.assertTrue(count > 0,
-                "Course count should be > 0 for partial keyword.");
+                "Course count should be > 0 for a valid keyword.");
     }
 }
 
