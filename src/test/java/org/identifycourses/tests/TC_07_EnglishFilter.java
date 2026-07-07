@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class TC_07_EnglishFilter extends BaseTest {
+
     @Test
     public void verifyEnglishFilterCourses() throws IOException {
-
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("Web Development");

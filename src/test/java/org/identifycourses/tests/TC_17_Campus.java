@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_17_Campus extends BaseTest {
+
     UniversitiesPage page;
     @Test
     public void verifyCampusSectionVisible() {
