@@ -18,9 +18,11 @@ public class TC_22_EmptyEmail extends TC_20_LoadTime {
             page.enterEmail("");
             page.enterPhone(ConfigReader.getProperty("phoneNumber"));
             page.enterInstitutionName(ConfigReader.getProperty("institutionName"));
+
             page.selectCountry(ConfigReader.getProperty("country"));
             page.selectInstutionType(ConfigReader.getProperty("institutionType"));
             page.selectState(ConfigReader.getProperty("state"));
+
             page.selectDepartment(ConfigReader.getProperty("department"));
             page.selectJobRole(ConfigReader.getProperty("job_role"));
             page.selectNeeds(ConfigReader.getProperty("needs"));

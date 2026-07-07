@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class TC_19_Links extends BaseTest {
+
     UniversitiesPage page;
     @Test
     public void verifyNavigationLinks() {

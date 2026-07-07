@@ -29,8 +29,4 @@ public class HomePage extends CommonCode {
         searchBox.sendKeys(Keys.ENTER);
         return new SearchPage(driver);
     }
-
-    public String getTitle() {
-        return driver.getTitle();
-    }
 }

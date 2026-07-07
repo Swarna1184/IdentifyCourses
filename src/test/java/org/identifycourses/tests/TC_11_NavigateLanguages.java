@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import basetest.BaseTest;
 
 public class TC_11_NavigateLanguages extends BaseTest {
+
     @Test
     public void navigateLanguageLearning() {
         LanguageLearningPage languagePage = new LanguageLearningPage(driver);

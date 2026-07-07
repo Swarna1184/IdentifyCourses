@@ -10,7 +10,6 @@ public class TC_09_ValidateCourses extends BaseTest {
 
     @Test
     public void validateMinimumTwoCoursesDisplayed() throws IOException {
-
         HomePage home = new HomePage(driver);
         home.clickSearchBox();
         home.enterSearchKeyword("Web Development");
