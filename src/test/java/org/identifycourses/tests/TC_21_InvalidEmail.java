@@ -17,11 +17,13 @@ public class TC_21_InvalidEmail extends TC_20_LoadTime {
         page.enterEmail(ConfigReader.getProperty("email"));
         page.enterPhone(ConfigReader.getProperty("phoneNumber"));
         page.enterInstitutionName(ConfigReader.getProperty("institutionName"));
+
         page.selectCountry(ConfigReader.getProperty("country"));
         page.selectInstutionType(ConfigReader.getProperty("institutionType"));
         page.selectState(ConfigReader.getProperty("state"));
         page.selectDepartment(ConfigReader.getProperty("department"));
         page.selectJobRole(ConfigReader.getProperty("job_role"));
+
         page.selectNeeds(ConfigReader.getProperty("needs"));
         page.clickSubmit();
         String actualError = page.getErrorMessage();
@@ -30,7 +32,5 @@ public class TC_21_InvalidEmail extends TC_20_LoadTime {
         Assert.assertTrue(
                 actualError.contains("Please enter your work email address"),
                 "Email validation message not displayed");
-
-
     }
 }

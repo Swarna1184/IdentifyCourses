@@ -17,13 +17,16 @@ public class TC_25_SubmitButton extends TC_20_LoadTime {
         page.enterFirstName(ConfigReader.getProperty("firstName"));
         page.enterLastName(ConfigReader.getProperty("lastName"));
         page.enterEmail(ConfigReader.getProperty("crtemail"));
+
         page.enterPhone(ConfigReader.getProperty("phoneNumber"));
         page.enterInstitutionName(ConfigReader.getProperty("institutionName"));
         page.selectCountry(ConfigReader.getProperty("country"));
         page.selectInstutionType(ConfigReader.getProperty("institutionType"));
+
         page.selectState(ConfigReader.getProperty("state"));
         page.selectDepartment(ConfigReader.getProperty("department"));
         page.selectJobRole(ConfigReader.getProperty("job_role"));
+
         page.selectNeeds(ConfigReader.getProperty("needs"));
         page.clickSubmit();
         System.out.println("Submit Button Displayed : " + page.isSubmitButtonDisplayed());

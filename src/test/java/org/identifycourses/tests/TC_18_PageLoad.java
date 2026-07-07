@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_18_PageLoad extends BaseTest {
+
     UniversitiesPage page;
     @Test
     public void verifyCampusPageLoad() {

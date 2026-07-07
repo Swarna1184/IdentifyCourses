@@ -16,7 +16,6 @@ import java.util.Set;
 public class TC_20_LoadTime extends BaseTest {
 
     UniversitiesPage page;
-
     @Test
     public void verifyPageLoadAndContactUsClick() {
         page = new UniversitiesPage(driver);
