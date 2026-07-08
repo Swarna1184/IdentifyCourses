@@ -109,93 +109,312 @@ example@yourdomain.com
 2026-07-04 13:14:29 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
 2026-07-04 13:15:15 [main] INFO  TC_02_SearchPartial - Application launched successfully
 2026-07-04 13:15:49 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
-2026-07-05 16:25:58 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\IdeaProjects\IdentifyCourses\testng.xml
+2026-07-06 12:09:54 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\OneDrive - Cognizant\Documents\Project\IdentifyCourses\testng.xml
 
-2026-07-05 16:26:06 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
-2026-07-05 16:26:20 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
-2026-07-05 16:26:31 [main] INFO  TC_12_CountLanguages - Application launched successfully
-2026-07-05 16:26:46 [main] INFO  TC_12_CountLanguages - Total languages count extracted
-2026-07-05 16:27:02 [main] INFO  TC_13_GetLanguages - Application launched successfully
-2026-07-05 16:27:18 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
-2026-07-05 16:27:41 [main] INFO  TC_14_CountLevels - Application launched successfully
-2026-07-05 16:28:07 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
-2026-07-05 16:28:33 [main] INFO  TC_15_GetLevels - Application launched successfully
-2026-07-05 16:28:46 [main] INFO  TC_15_GetLevels - Retrieved all the levels
-2026-07-07 16:17:51 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\IdeaProjects\IdentifyCourses\testng.xml
-
-2026-07-07 16:18:05 [main] INFO  TC_01_SearchValid - Application launched successfully
-2026-07-07 16:18:22 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
-2026-07-07 16:18:35 [main] INFO  TC_02_SearchPartial - Application launched successfully
-2026-07-07 16:18:51 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
-2026-07-07 16:19:02 [main] INFO  TC_03_SearchInvalid - Application launched successfully
-2026-07-07 16:19:11 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
-2026-07-07 16:19:26 [main] INFO  TC_04_SearchEmpty - Application launched successfully
-2026-07-07 16:19:31 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
-2026-07-07 16:19:31 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
-2026-07-07 16:19:44 [main] INFO  TC_05_SearchSpecial - Application launched successfully
-2026-07-07 16:20:04 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
-2026-07-07 16:20:21 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
-2026-07-07 16:20:35 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
-2026-07-07 16:20:51 [main] INFO  TC_07_EnglishFilter - Application launched successfully
-2026-07-07 16:21:04 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
-2026-07-07 16:21:30 [main] INFO  TC_08_BothFilters - Application launched successfully
-2026-07-07 16:21:38 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
-2026-07-07 16:21:56 [main] INFO  TC_09_ValidateCourses - Application launched successfully
-2026-07-07 16:22:12 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
-2026-07-07 16:22:29 [main] INFO  TC_10_ExtractDetails - Application launched successfully
-2026-07-07 16:22:43 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
-2026-07-07 16:22:57 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
-2026-07-07 16:23:33 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
-2026-07-07 16:23:53 [main] INFO  TC_12_CountLanguages - Application launched successfully
-2026-07-07 16:24:25 [main] INFO  TC_12_CountLanguages - Total languages count extracted
-2026-07-07 16:24:51 [main] INFO  TC_13_GetLanguages - Application launched successfully
-2026-07-07 16:25:25 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
-2026-07-07 16:25:47 [main] INFO  TC_14_CountLevels - Application launched successfully
-2026-07-07 16:26:17 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
-2026-07-07 16:26:38 [main] INFO  TC_15_GetLevels - Application launched successfully
-2026-07-07 16:27:02 [main] INFO  TC_15_GetLevels - Retrieved all the levels
-2026-07-07 16:27:22 [main] INFO  TC_16_Universities - Application launched successfully
-2026-07-07 16:27:35 [main] INFO  TC_16_Universities - Navigation to university page is validated
-2026-07-07 16:27:48 [main] INFO  TC_17_Campus - Application launched successfully
-2026-07-07 16:28:04 [main] INFO  TC_17_Campus - Courses for campus section is displayed successfully
-2026-07-07 16:28:17 [main] INFO  TC_18_PageLoad - Application launched successfully
-2026-07-07 16:28:29 [main] INFO  TC_18_PageLoad - Courses for campus is loaded successfully
-2026-07-07 16:28:41 [main] INFO  TC_19_Links - Application launched successfully
-2026-07-07 16:28:51 [main] INFO  TC_19_Links - Navigation to contact page link is working successfully
-2026-07-07 16:28:58 [main] INFO  TC_20_LoadTime - Application launched successfully
-2026-07-07 16:29:41 [main] INFO  TC_21_InvalidEmail - Application launched successfully
-2026-07-07 16:30:11 [main] INFO  TC_21_InvalidEmail - Validation Error : Please enter your work email address
-2026-07-07 16:30:40 [main] INFO  TC_22_EmptyEmail - Application launched successfully
-2026-07-07 16:31:05 [main] INFO  TC_22_EmptyEmail - Validation Error: Must be valid email.
+2026-07-06 12:10:11 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-06 12:10:16 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-06 12:10:30 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-06 12:10:42 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-06 12:10:56 [main] INFO  TC_03_SearchInvalid - Application launched successfully
+2026-07-06 12:11:03 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
+2026-07-06 12:11:23 [main] INFO  TC_04_SearchEmpty - Application launched successfully
+2026-07-06 12:11:29 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
+2026-07-06 12:11:29 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
+2026-07-06 12:11:45 [main] INFO  TC_05_SearchSpecial - Application launched successfully
+2026-07-06 12:11:52 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
+2026-07-06 12:12:04 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-06 12:12:16 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
+2026-07-06 12:12:30 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-06 12:12:43 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-06 12:12:57 [main] INFO  TC_08_BothFilters - Application launched successfully
+2026-07-06 12:13:11 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
+2026-07-06 12:13:23 [main] INFO  TC_09_ValidateCourses - Application launched successfully
+2026-07-06 12:13:37 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
+2026-07-06 12:13:48 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-06 12:14:06 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-06 12:14:19 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-06 12:14:32 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-06 12:14:50 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-06 12:15:04 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-06 12:15:24 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-06 12:15:51 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-06 12:16:06 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-06 12:16:21 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-06 12:16:35 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-06 12:17:06 [main] INFO  TC_15_GetLevels - Retrieved all the levels
+2026-07-06 12:17:31 [main] INFO  TC_16_Universities - Application launched successfully
+2026-07-06 12:17:47 [main] INFO  TC_16_Universities - Navigation to university page is validated
+2026-07-06 12:18:02 [main] INFO  TC_17_Campus - Application launched successfully
+2026-07-06 12:18:12 [main] INFO  TC_17_Campus - Courses for campus section is displayed successfully
+2026-07-06 12:18:24 [main] INFO  TC_18_PageLoad - Application launched successfully
+2026-07-06 12:18:36 [main] INFO  TC_18_PageLoad - Courses for campus is loaded successfully
+2026-07-06 12:18:51 [main] INFO  TC_19_Links - Application launched successfully
+2026-07-06 12:18:59 [main] INFO  TC_19_Links - Navigation to contact page link is working successfully
+2026-07-06 12:19:12 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-06 12:19:50 [main] INFO  TC_21_InvalidEmail - Application launched successfully
+2026-07-06 12:20:16 [main] INFO  TC_21_InvalidEmail - Validation Error : Please enter your work email address
+2026-07-06 12:20:37 [main] INFO  TC_22_EmptyEmail - Application launched successfully
+2026-07-06 12:21:24 [main] INFO  TC_22_EmptyEmail - Validation Error: Must be valid email.
 example@yourdomain.com
-2026-07-07 16:31:32 [main] INFO  Tc_23_ErrorMessageDisplay - Application launched successfully
-2026-07-07 16:32:02 [main] INFO  Tc_23_ErrorMessageDisplay - Displayed Error Message: Please enter your work email address
-2026-07-07 16:32:23 [main] INFO  TC_24_CorrectEmail - Application launched successfully
-2026-07-07 16:32:59 [main] INFO  TC_24_CorrectEmail - The form is submitted succesfully and the current URLhttps://www.coursera.org/campus/thank-you
-2026-07-07 16:33:21 [main] INFO  TC_25_SubmitButton - Application launched successfully
-2026-07-07 16:33:46 [main] INFO  TC_25_SubmitButton - Submit Button Clicked Successfully
-2026-07-07 18:30:57 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+2026-07-06 12:21:46 [main] INFO  Tc_23_ErrorMessageDisplay - Application launched successfully
+2026-07-06 12:22:19 [main] INFO  Tc_23_ErrorMessageDisplay - Displayed Error Message: Please enter your work email address
+2026-07-06 12:22:38 [main] INFO  TC_24_CorrectEmail - Application launched successfully
+2026-07-06 12:23:16 [main] INFO  TC_24_CorrectEmail - The form is submitted succesfully and the current URLhttps://www.coursera.org/campus/thank-you
+2026-07-06 12:23:35 [main] INFO  TC_25_SubmitButton - Application launched successfully
+2026-07-06 12:24:11 [main] INFO  TC_25_SubmitButton - Submit Button Clicked Successfully
+2026-07-07 18:33:23 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
 
-2026-07-07 18:31:09 [main] INFO  TC_12_CountLanguages - Application launched successfully
-2026-07-07 18:31:36 [main] INFO  TC_12_CountLanguages - Total languages count extracted
-2026-07-07 18:32:00 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+2026-07-07 18:33:32 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-07 18:33:48 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-07 18:45:02 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
 
-2026-07-07 18:32:09 [main] INFO  TC_13_GetLanguages - Application launched successfully
-2026-07-07 18:32:41 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
-2026-07-07 18:33:07 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+2026-07-07 18:45:09 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-07 18:45:17 [main] INFO  TC_20_LoadTime - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 18:45:17 [main] INFO  TC_20_LoadTime - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-07 18:45:17 [main] INFO  TC_20_LoadTime - Load Time  : 0 sec
+2026-07-07 18:45:24 [main] INFO  TC_20_LoadTime -  Contact Us clicked
+2026-07-07 18:45:27 [main] INFO  TC_20_LoadTime - Contact Us URL   : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-07 18:45:27 [main] INFO  TC_20_LoadTime - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-07 18:45:27 [main] INFO  TC_20_LoadTime - Load time fetched successfully
+2026-07-07 18:46:17 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
 
-2026-07-07 18:33:15 [main] INFO  TC_14_CountLevels - Application launched successfully
-2026-07-07 18:33:38 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
-2026-07-08 09:22:21 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+2026-07-07 18:46:23 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-07 18:46:37 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-07 22:06:19 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\OneDrive - Cognizant\Documents\Project\IdentifyCourses\testng.xml
 
-2026-07-08 09:22:28 [main] INFO  TC_20_LoadTime - Application launched successfully
-2026-07-08 09:23:51 [main] INFO  Utils - [TestNG] Running:
-  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+2026-07-07 22:06:19 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\OneDrive - Cognizant\Documents\Project\IdentifyCourses\testng.xml
 
-2026-07-08 09:23:58 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-07 22:06:32 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-07 22:06:36 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-07 22:06:43 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-07 22:06:53 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-07 22:07:00 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-07 22:07:11 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-07 22:07:12 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-07 22:07:21 [main] INFO  TC_03_SearchInvalid - Application launched successfully
+2026-07-07 22:07:27 [main] INFO  TC_03_SearchInvalid - Application launched successfully
+2026-07-07 22:07:38 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
+2026-07-07 22:07:38 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
+2026-07-07 22:07:51 [main] INFO  TC_04_SearchEmpty - Application launched successfully
+2026-07-07 22:07:52 [main] INFO  TC_04_SearchEmpty - Application launched successfully
+2026-07-07 22:07:58 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
+2026-07-07 22:07:58 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
+2026-07-07 22:07:59 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
+2026-07-07 22:07:59 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
+2026-07-07 22:08:11 [main] INFO  TC_05_SearchSpecial - Application launched successfully
+2026-07-07 22:08:12 [main] INFO  TC_05_SearchSpecial - Application launched successfully
+2026-07-07 22:08:20 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
+2026-07-07 22:08:22 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
+2026-07-07 22:08:31 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-07 22:08:35 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-07 22:09:02 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
+2026-07-07 22:09:02 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
+2026-07-07 22:09:16 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-07 22:09:16 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-07 22:09:31 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-07 22:09:36 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-07 22:09:44 [main] INFO  TC_08_BothFilters - Application launched successfully
+2026-07-07 22:09:50 [main] INFO  TC_08_BothFilters - Application launched successfully
+2026-07-07 22:10:03 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
+2026-07-07 22:10:05 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
+2026-07-07 22:10:15 [main] INFO  TC_09_ValidateCourses - Application launched successfully
+2026-07-07 22:10:20 [main] INFO  TC_09_ValidateCourses - Application launched successfully
+2026-07-07 22:10:33 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
+2026-07-07 22:10:35 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
+2026-07-07 22:10:45 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-07 22:10:46 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-07 22:11:04 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-07 22:11:08 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-07 22:11:19 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-07 22:11:25 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-07 22:11:48 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-07 22:11:51 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-07 22:12:04 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-07 22:12:09 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-07 22:12:38 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-07 22:12:40 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-07 22:12:53 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-07 22:12:57 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-07 22:13:26 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-07 22:13:29 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-07 22:13:46 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-07 22:13:49 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-07 22:14:15 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-07 22:14:18 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-07 22:14:50 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-07 22:14:50 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-07 22:16:48 [main] INFO  TC_16_Universities - Application launched successfully
+2026-07-07 22:16:55 [main] INFO  TC_16_Universities - URL   : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 22:16:55 [main] INFO  TC_16_Universities - Title : Online Learning Platform For Higher Education | Coursera
+2026-07-07 22:16:55 [main] INFO  TC_16_Universities - Navigation to university page is validated
+2026-07-07 22:17:06 [main] INFO  TC_17_Campus - Application launched successfully
+2026-07-07 22:17:27 [main] INFO  TC_18_PageLoad - Application launched successfully
+2026-07-07 22:17:34 [main] INFO  TC_18_PageLoad - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 22:17:34 [main] INFO  TC_18_PageLoad - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-07 22:17:34 [main] INFO  TC_18_PageLoad - Courses for campus is loaded successfully
+2026-07-07 22:17:44 [main] INFO  TC_19_Links - Application launched successfully
+2026-07-07 22:17:53 [main] INFO  TC_19_Links - Total Working Links: 63
+2026-07-07 22:17:53 [main] INFO  TC_19_Links - Navigation to contact page link is working successfully
+2026-07-07 22:18:02 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-07 22:18:08 [main] INFO  TC_20_LoadTime - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 22:18:08 [main] INFO  TC_20_LoadTime - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-07 22:18:08 [main] INFO  TC_20_LoadTime - Load Time  : 0 sec
+2026-07-07 22:18:13 [main] INFO  TC_20_LoadTime -  Contact Us clicked
+2026-07-07 22:18:16 [main] INFO  TC_20_LoadTime - Contact Us URL   : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-07 22:18:16 [main] INFO  TC_20_LoadTime - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-07 22:18:16 [main] INFO  TC_20_LoadTime - Load time fetched successfully
+2026-07-07 22:18:26 [main] INFO  TC_21_InvalidEmail - Application launched successfully
+2026-07-07 22:18:31 [main] INFO  TC_21_InvalidEmail - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 22:18:31 [main] INFO  TC_21_InvalidEmail - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-07 22:18:31 [main] INFO  TC_21_InvalidEmail - Load Time  : 0 sec
+2026-07-07 22:18:36 [main] INFO  TC_21_InvalidEmail -  Contact Us clicked
+2026-07-07 22:18:39 [main] INFO  TC_21_InvalidEmail - Contact Us URL   : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-07 22:18:39 [main] INFO  TC_21_InvalidEmail - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-07 22:18:39 [main] INFO  TC_21_InvalidEmail - Load time fetched successfully
+2026-07-07 22:18:44 [main] INFO  TC_21_InvalidEmail - Validation Error : Please enter your work email address
+2026-07-07 22:18:55 [main] INFO  TC_22_EmptyEmail - Application launched successfully
+2026-07-07 22:19:06 [main] INFO  TC_22_EmptyEmail - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 22:19:06 [main] INFO  TC_22_EmptyEmail - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-07 22:19:06 [main] INFO  TC_22_EmptyEmail - Load Time  : 0 sec
+2026-07-07 22:19:13 [main] INFO  TC_22_EmptyEmail -  Contact Us clicked
+2026-07-07 22:19:16 [main] INFO  TC_22_EmptyEmail - Contact Us URL   : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-07 22:19:16 [main] INFO  TC_22_EmptyEmail - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-07 22:19:16 [main] INFO  TC_22_EmptyEmail - Load time fetched successfully
+2026-07-07 22:19:21 [main] INFO  TC_22_EmptyEmail - Validation Error: Must be valid email.
+example@yourdomain.com
+2026-07-07 22:19:31 [main] INFO  Tc_23_ErrorMessageDisplay - Application launched successfully
+2026-07-07 22:19:39 [main] INFO  Tc_23_ErrorMessageDisplay - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-07 22:19:39 [main] INFO  Tc_23_ErrorMessageDisplay - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-07 22:19:39 [main] INFO  Tc_23_ErrorMessageDisplay - Load Time  : 0 sec
+2026-07-07 22:19:46 [main] INFO  Tc_23_ErrorMessageDisplay -  Contact Us clicked
+2026-07-07 22:19:56 [main] INFO  TC_24_CorrectEmail - Application launched successfully
+2026-07-08 09:25:09 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-08 09:25:14 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-08 09:25:20 [main] INFO  TC_20_LoadTime - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 09:25:20 [main] INFO  TC_20_LoadTime - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 09:25:20 [main] INFO  TC_20_LoadTime - Load Time  : 0 sec
+2026-07-08 09:25:26 [main] INFO  TC_20_LoadTime -  Contact Us clicked
+2026-07-08 09:25:29 [main] INFO  TC_20_LoadTime - Contact Us URL   : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 09:25:29 [main] INFO  TC_20_LoadTime - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 09:25:29 [main] INFO  TC_20_LoadTime - Load time fetched successfully
+2026-07-08 09:27:16 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-08 09:27:20 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-08 10:24:09 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\IdeaProjects\IdentifyCourses\testng.xml
+
+2026-07-08 10:24:15 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-08 10:24:20 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-08 10:24:29 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-08 10:24:34 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-08 10:24:42 [main] INFO  TC_03_SearchInvalid - Application launched successfully
+2026-07-08 10:24:47 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
+2026-07-08 10:24:55 [main] INFO  TC_04_SearchEmpty - Application launched successfully
+2026-07-08 10:25:02 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
+2026-07-08 10:25:02 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
+2026-07-08 10:25:09 [main] INFO  TC_05_SearchSpecial - Application launched successfully
+2026-07-08 10:25:15 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
+2026-07-08 10:25:23 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-08 10:25:32 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
+2026-07-08 10:25:40 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-08 10:25:49 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-08 10:25:57 [main] INFO  TC_08_BothFilters - Application launched successfully
+2026-07-08 10:26:07 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
+2026-07-08 10:26:15 [main] INFO  TC_09_ValidateCourses - Application launched successfully
+2026-07-08 10:26:25 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
+2026-07-08 10:26:33 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-08 10:26:45 [main] INFO  TC_10_ExtractDetails - Extracting from page: https://www.coursera.org/search?query=Web%20Development&productDifficultyLevel=Beginner&language=English&sortBy=BEST_MATCH
+2026-07-08 10:26:45 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-08 10:26:57 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-08 10:27:08 [main] INFO  TC_11_NavigateLanguages - Current URL : https://www.coursera.org/browse/language-learning
+2026-07-08 10:27:08 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-08 10:27:15 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-08 10:27:27 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-08 10:27:35 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-08 10:27:45 [main] INFO  TC_13_GetLanguages - Current URL: https://www.coursera.org/browse/language-learning
+2026-07-08 10:27:49 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-08 10:27:49 [main] INFO  TC_13_GetLanguages - Languages Found: [English(263), Spanish(205), Chinese(195), French(188), Pushto(186), Portuguese(184), Arabic(183), German(183), Hindi(181), Indonesian(181), Russian(181), Japanese(171), Korean(171), Italian(169), Swedish(168), Dutch(167), Greek(167), Kazakh(167), Polish(167), Thai(167), Turkish(167), Ukrainian(167), Azerbaijani(126), Vietnamese(124), Hungarian(116), Urdu(115), Bengali(111), Persian(23), Uzbek(18), Afrikaans(16), Oriya(9), Mongolian(7), Catalan(6), Slovak(5), Tamil(5), Serbian(4), Czech(3), Hebrew(3), Lithuanian(3), Romanian(3), Albanian(2), Burmese(2), Haitian (Haitian Creole)(2), Javanese(2), Bulgarian(1), Croatian(1), Georgian(1), Marathi(1), Swahili(1)]
+2026-07-08 10:28:21 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-08 10:28:30 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-08 10:28:45 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-08 10:28:55 [main] INFO  TC_15_GetLevels - 
+===== LEVELS =====
+2026-07-08 10:28:55 [main] INFO  TC_15_GetLevels - Beginner(122)
+2026-07-08 10:28:55 [main] INFO  TC_15_GetLevels - Intermediate(105)
+2026-07-08 10:28:55 [main] INFO  TC_15_GetLevels - Advanced(20)
+2026-07-08 10:28:55 [main] INFO  TC_15_GetLevels - Mixed(53)
+2026-07-08 10:28:55 [main] INFO  TC_15_GetLevels - Retrieved all the levels
+2026-07-08 10:29:04 [main] INFO  TC_16_Universities - Application launched successfully
+2026-07-08 10:29:11 [main] INFO  TC_16_Universities - URL   : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:29:11 [main] INFO  TC_16_Universities - Title : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:29:11 [main] INFO  TC_16_Universities - Navigation to university page is validated
+2026-07-08 10:29:19 [main] INFO  TC_17_Campus - Application launched successfully
+2026-07-08 10:29:25 [main] INFO  TC_17_Campus - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:29:25 [main] INFO  TC_17_Campus - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:29:25 [main] INFO  TC_17_Campus - Courses for campus section is displayed successfully
+2026-07-08 10:29:33 [main] INFO  TC_18_PageLoad - Application launched successfully
+2026-07-08 10:29:39 [main] INFO  TC_18_PageLoad - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:29:39 [main] INFO  TC_18_PageLoad - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:29:39 [main] INFO  TC_18_PageLoad - Courses for campus is loaded successfully
+2026-07-08 10:29:48 [main] INFO  TC_19_Links - Application launched successfully
+2026-07-08 10:29:54 [main] INFO  TC_19_Links - Total Working Links: 63
+2026-07-08 10:29:54 [main] INFO  TC_19_Links - Navigation to contact page link is working successfully
+2026-07-08 10:30:04 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-08 10:30:10 [main] INFO  TC_20_LoadTime - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:30:10 [main] INFO  TC_20_LoadTime - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:30:10 [main] INFO  TC_20_LoadTime - Load Time  : 6 sec
+2026-07-08 10:30:14 [main] INFO  TC_20_LoadTime - Contact Us URL : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 10:30:14 [main] INFO  TC_20_LoadTime - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 10:30:14 [main] INFO  TC_20_LoadTime - Loading time is verified successfully
+2026-07-08 10:30:23 [main] INFO  TC_21_InvalidEmail - Application launched successfully
+2026-07-08 10:30:28 [main] INFO  TC_21_InvalidEmail - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:30:28 [main] INFO  TC_21_InvalidEmail - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:30:28 [main] INFO  TC_21_InvalidEmail - Load Time  : 4 sec
+2026-07-08 10:30:33 [main] INFO  TC_21_InvalidEmail - Contact Us URL : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 10:30:33 [main] INFO  TC_21_InvalidEmail - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 10:30:33 [main] INFO  TC_21_InvalidEmail - Loading time is verified successfully
+2026-07-08 10:30:37 [main] INFO  TC_21_InvalidEmail - Validation Error : Please enter your work email address
+2026-07-08 10:30:46 [main] INFO  TC_22_EmptyEmail - Application launched successfully
+2026-07-08 10:30:52 [main] INFO  TC_22_EmptyEmail - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:30:52 [main] INFO  TC_22_EmptyEmail - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:30:52 [main] INFO  TC_22_EmptyEmail - Load Time  : 6 sec
+2026-07-08 10:30:55 [main] INFO  TC_22_EmptyEmail - Contact Us URL : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 10:30:55 [main] INFO  TC_22_EmptyEmail - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 10:30:55 [main] INFO  TC_22_EmptyEmail - Loading time is verified successfully
+2026-07-08 10:30:58 [main] INFO  TC_22_EmptyEmail - Validation Error: Must be valid email.
+example@yourdomain.com
+2026-07-08 10:31:06 [main] INFO  Tc_23_ErrorMessageDisplay - Application launched successfully
+2026-07-08 10:31:12 [main] INFO  Tc_23_ErrorMessageDisplay - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:31:12 [main] INFO  Tc_23_ErrorMessageDisplay - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:31:12 [main] INFO  Tc_23_ErrorMessageDisplay - Load Time  : 5 sec
+2026-07-08 10:31:15 [main] INFO  Tc_23_ErrorMessageDisplay - Contact Us URL : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 10:31:15 [main] INFO  Tc_23_ErrorMessageDisplay - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 10:31:15 [main] INFO  Tc_23_ErrorMessageDisplay - Loading time is verified successfully
+2026-07-08 10:31:20 [main] INFO  Tc_23_ErrorMessageDisplay - Displayed Error Message: Please enter your work email address
+2026-07-08 10:31:30 [main] INFO  TC_24_CorrectEmail - Application launched successfully
+2026-07-08 10:31:36 [main] INFO  TC_24_CorrectEmail - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:31:36 [main] INFO  TC_24_CorrectEmail - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:31:36 [main] INFO  TC_24_CorrectEmail - Load Time  : 5 sec
+2026-07-08 10:31:38 [main] INFO  TC_24_CorrectEmail - Contact Us URL : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 10:31:38 [main] INFO  TC_24_CorrectEmail - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 10:31:38 [main] INFO  TC_24_CorrectEmail - Loading time is verified successfully
+2026-07-08 10:31:46 [main] INFO  TC_24_CorrectEmail - The form is submitted succesfully and the current URLhttps://www.coursera.org/campus/thank-you
+2026-07-08 10:31:55 [main] INFO  TC_25_SubmitButton - Application launched successfully
+2026-07-08 10:32:02 [main] INFO  TC_25_SubmitButton - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 10:32:02 [main] INFO  TC_25_SubmitButton - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 10:32:02 [main] INFO  TC_25_SubmitButton - Load Time  : 6 sec
+2026-07-08 10:32:05 [main] INFO  TC_25_SubmitButton - Contact Us URL : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 10:32:05 [main] INFO  TC_25_SubmitButton - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 10:32:05 [main] INFO  TC_25_SubmitButton - Loading time is verified successfully
+2026-07-08 10:32:07 [main] INFO  TC_25_SubmitButton - Submit Button Displayed : true
+2026-07-08 10:32:07 [main] INFO  TC_25_SubmitButton - Submit Button Enabled : true
+2026-07-08 10:32:07 [main] INFO  TC_25_SubmitButton - Submit Button Clicked Successfully

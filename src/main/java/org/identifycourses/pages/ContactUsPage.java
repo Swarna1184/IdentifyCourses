@@ -36,6 +36,7 @@ public class ContactUsPage extends CommonCode {
 
     @FindBy(xpath = "//select[@id='Country']")
     WebElement drpCountry;
+
     @FindBy(id = "State")
     WebElement drpState;
 
@@ -60,7 +61,6 @@ public class ContactUsPage extends CommonCode {
     }
 
     public void enterEmail(String email) {
-
         txtEmail.sendKeys(email);
     }
 

@@ -7,33 +7,40 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SearchPage extends CommonCode {
 
     public SearchPage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(xpath = "//input[@type='search' or @type='text']")
-    WebElement searchBox;
+
     @FindBy(xpath = "//button[contains(.,'Filter')]")
     WebElement filterButton;
+
     @FindBy(xpath = "//span[contains(text(),'Level')]")
     WebElement levelDropdown;
+
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'Beginner')]")
     WebElement beginnerCheckbox;
+
     @FindBy(xpath = "//button[contains(.,'View')]")
     WebElement viewButton;
+
     @FindBy(xpath = "//div[contains(@data-testid,'product-card')]")
     List<WebElement> courseCards;
+
     @FindBy(xpath = "//span[contains(text(),'Language')]")
     WebElement languageDropdown;
+
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
-    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//h3")
-    List<WebElement> courseNames;
-    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(text(),'hours') or contains(text(),'Weeks') or contains(text(),'Months')]")
-    List<WebElement> learningHours;
-    @FindBy(xpath = "//div[contains(@data-testid,'product-card')]//*[contains(@aria-label,'out of 5 stars')]")
-    List<WebElement> ratings;
+
+    private static final Pattern CARD_PATTERN = Pattern.compile(
+            "★\\s*([0-9]+(?:\\.[0-9]+)?)|(\\d+\\s*-\\s*\\d+\\s*(?:Weeks|Months)|\\d+(?:\\.\\d+)?\\s*hours)"
+    );
+
     private void safeClick(WebElement element) {
         try {
             clickElement(element);
@@ -41,7 +48,9 @@ public class SearchPage extends CommonCode {
             clickByJS(element);
         }
     }
+
     public void searchCourse(String course) {
+        WebElement searchBox = null;
         WebElement box = waitForVisibility(searchBox);
         box.clear();
         box.sendKeys(course);
@@ -61,9 +70,11 @@ public class SearchPage extends CommonCode {
         waitForAllElementsVisible(courseCards);
         System.out.println("Beginner filter applied");
     }
+
     public boolean areResultsDisplayed() {
         return courseCards.size() > 0;
     }
+
     public void applyEnglishFilter() {
         scrollIntoView(filterButton);
         safeClick(filterButton);
@@ -98,6 +109,7 @@ public class SearchPage extends CommonCode {
         System.out.println("Total courses found: " + count);
         return count;
     }
+
     public List<Map<String, String>> getCourseDetails() {
         List<Map<String, String>> courses = new ArrayList<>();
         waitForAllElementsVisible(courseCards);
@@ -114,21 +126,13 @@ public class SearchPage extends CommonCode {
             }
             try {
                 String cardText = card.getText();
-                java.util.regex.Pattern ratingPattern =
-                        java.util.regex.Pattern.compile("★\\s*([0-9]+\\.?[0-9]*)");
-                java.util.regex.Matcher ratingMatcher =
-                        ratingPattern.matcher(cardText);
-                if (ratingMatcher.find()) {
-                    rating = ratingMatcher.group(1);
-                }
-                java.util.regex.Pattern durationPattern =
-                        java.util.regex.Pattern.compile(
-                                "(\\d+\\s*-\\s*\\d+\\s*(Weeks|Months))|(\\d+(\\.\\d+)?\\s*hours)");
-                java.util.regex.Matcher durationMatcher =
-                        durationPattern.matcher(cardText);
-
-                if (durationMatcher.find()) {
-                    hours = durationMatcher.group();
+                Matcher matcher = CARD_PATTERN.matcher(cardText);
+                while (matcher.find()) {
+                    if (matcher.group(1) != null) {
+                        rating = matcher.group(1);
+                    } else {
+                        hours = matcher.group();
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();

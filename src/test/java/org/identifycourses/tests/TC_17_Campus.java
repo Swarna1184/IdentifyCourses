@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_17_Campus extends BaseTest {
+
     UniversitiesPage page;
     @Test
     public void verifyCampusSectionVisible() {
@@ -13,8 +14,8 @@ public class TC_17_Campus extends BaseTest {
         page.goToUniversitiesPage();
         String url = page.getCurrentUrl().toLowerCase();
         String title = page.getPageTitle();
-        System.out.println("Campus URL : " + url);
-        System.out.println("Title      : " + title);
+        logger.info("Campus URL : {}", url);
+        logger.info("Title      : {}", title);
         Assert.assertTrue(url.contains("campus") || url.contains("universities"),
                 "Courses for Campus section not displayed");
         Assert.assertFalse(title.isEmpty(),

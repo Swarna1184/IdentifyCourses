@@ -16,10 +16,10 @@ public class TC_13_GetLanguages extends BaseTest {
         langPage.navigateToLanguageLearning();
         langPage.closePopupIfPresent();
         String url = driver.getCurrentUrl();
-        System.out.println("Current URL: " + url);
+        logger.info("Current URL: {}", url);
         List<String> languages = langPage.getLanguages();
         logger.info("Retrieved all the languages");
-        System.out.println("Languages Found: " + languages);
+        logger.info("Languages Found: {}", languages);
         BaseTest.takeScreenShot(driver, "Languages");
         Assert.assertFalse(
                 languages.isEmpty(),

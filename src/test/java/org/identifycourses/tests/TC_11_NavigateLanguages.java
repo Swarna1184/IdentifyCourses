@@ -6,12 +6,13 @@ import org.testng.annotations.Test;
 import basetest.BaseTest;
 
 public class TC_11_NavigateLanguages extends BaseTest {
+
     @Test
     public void navigateLanguageLearning() {
         LanguageLearningPage languagePage = new LanguageLearningPage(driver);
         languagePage.navigateToLanguageLearning();
         languagePage.closePopupIfPresent();
-        System.out.println("Current URL : " + driver.getCurrentUrl());
+        logger.info("Current URL : {}", driver.getCurrentUrl());
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("language-learning"),
                 "Navigation to Language Learning failed");

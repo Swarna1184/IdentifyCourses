@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class TC_19_Links extends BaseTest {
+
     UniversitiesPage page;
     @Test
     public void verifyNavigationLinks() {
@@ -24,7 +25,7 @@ public class TC_19_Links extends BaseTest {
                 }
             } catch (Exception ignored) {}
         }
-        System.out.println("Total Working Links: " + workingLinks);
+        logger.info("Total Working Links: {}", workingLinks);
         Assert.assertTrue(workingLinks > 0,
                 "No working navigation links found");
         logger.info("Navigation to contact page link is working successfully");

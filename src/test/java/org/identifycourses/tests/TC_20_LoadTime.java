@@ -15,9 +15,9 @@ public class TC_20_LoadTime extends BaseTest {
         page.goToUniversitiesPage();
         long endTime = System.currentTimeMillis();
         long loadTimeSec = (endTime - startTime) / 1000;
-        System.out.println("Campus URL : " + page.getCurrentUrl());
-        System.out.println("Title      : " + page.getPageTitle());
-        System.out.println("Load Time  : " + loadTimeSec + " sec");
+        logger.info("Campus URL : {}", page.getCurrentUrl());
+        logger.info("Title      : {}", page.getPageTitle());
+        logger.info("Load Time  : {} sec", loadTimeSec);
         Assert.assertTrue(page.getCurrentUrl().toLowerCase().contains("campus"),
                 "Campus page not loaded");
         Assert.assertTrue(
@@ -25,10 +25,10 @@ public class TC_20_LoadTime extends BaseTest {
                 "Page load exceeded 15 sec");
         page.clickContactUs();
         page.switchToContactUsWindow();
-        System.out.println("Contact Us URL : " + page.getCurrentUrl());
-        System.out.println("Contact Us Title : " + page.getPageTitle());
+        logger.info("Contact Us URL : {}", page.getCurrentUrl());
+        logger.info("Contact Us Title : {}", page.getPageTitle());
         Assert.assertFalse(page.getCurrentUrl().isEmpty(),
                 "Contact Us page not opened");
-        System.out.println("TC_20 PASSED");
+        logger.info("Loading time is verified successfully");
     }
 }
