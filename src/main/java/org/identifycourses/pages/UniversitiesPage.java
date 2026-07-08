@@ -16,6 +16,9 @@ public class UniversitiesPage extends CommonCode {
     @FindBy(xpath = "//a[normalize-space()='For Universities']")
     WebElement forUniversitiesLink;
 
+    @FindBy(xpath = "//a[normalize-space()='Contact us'] | //button[normalize-space()='Contact us']")
+    WebElement contactUsButton;
+
     public void clickForUniversities() {
         try {
             clickElement(forUniversitiesLink);
@@ -50,5 +53,25 @@ public class UniversitiesPage extends CommonCode {
     public boolean isUniversitiesPageDisplayed() {
         String url = driver.getCurrentUrl().toLowerCase();
         return url.contains("campus") || url.contains("universities");
+    }
+
+    public void clickContactUs() {
+        scrollIntoView(contactUsButton);
+        try {
+            clickElement(contactUsButton);
+        }
+        catch (Exception e) {
+            clickByJS(contactUsButton);
+        }
+    }
+
+    public void switchToContactUsWindow() {
+        String parentWindow = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            if (!handle.equals(parentWindow)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
     }
 }

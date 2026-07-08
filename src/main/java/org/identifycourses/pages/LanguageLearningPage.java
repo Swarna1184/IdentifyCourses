@@ -26,10 +26,10 @@ public class LanguageLearningPage extends CommonCode {
     @FindBy(xpath = "//button[@aria-label='Close Message']")
     WebElement closePopup;
 
-    @FindBy(xpath = "//*[text()='Language']")
+    @FindBy(xpath = "//div[text()='Language']")
     WebElement languageHeader;
 
-    @FindBy(xpath = "//*[text()='Level']")
+    @FindBy(xpath = "//div[text()='Level']")
     WebElement levelHeader;
 
     @FindBy(xpath = "//div[contains(@data-testid,'productDifficultyLevel')]//label")

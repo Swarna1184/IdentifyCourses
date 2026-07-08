@@ -109,3 +109,93 @@ example@yourdomain.com
 2026-07-04 13:14:29 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
 2026-07-04 13:15:15 [main] INFO  TC_02_SearchPartial - Application launched successfully
 2026-07-04 13:15:49 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-05 16:25:58 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\IdeaProjects\IdentifyCourses\testng.xml
+
+2026-07-05 16:26:06 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-05 16:26:20 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-05 16:26:31 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-05 16:26:46 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-05 16:27:02 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-05 16:27:18 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-05 16:27:41 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-05 16:28:07 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-05 16:28:33 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-05 16:28:46 [main] INFO  TC_15_GetLevels - Retrieved all the levels
+2026-07-07 16:17:51 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\IdeaProjects\IdentifyCourses\testng.xml
+
+2026-07-07 16:18:05 [main] INFO  TC_01_SearchValid - Application launched successfully
+2026-07-07 16:18:22 [main] INFO  TC_01_SearchValid - Total courses for 'Web Development': 12
+2026-07-07 16:18:35 [main] INFO  TC_02_SearchPartial - Application launched successfully
+2026-07-07 16:18:51 [main] INFO  TC_02_SearchPartial - Total courses for 'Web Deve': 12
+2026-07-07 16:19:02 [main] INFO  TC_03_SearchInvalid - Application launched successfully
+2026-07-07 16:19:11 [main] INFO  TC_03_SearchInvalid - Search URL: https://www.coursera.org/search?query=Web%40%23Development%24%24
+2026-07-07 16:19:26 [main] INFO  TC_04_SearchEmpty - Application launched successfully
+2026-07-07 16:19:31 [main] INFO  TC_04_SearchEmpty - Original URL: https://www.coursera.org/
+2026-07-07 16:19:31 [main] INFO  TC_04_SearchEmpty - New URL     : https://www.coursera.org/
+2026-07-07 16:19:44 [main] INFO  TC_05_SearchSpecial - Application launched successfully
+2026-07-07 16:20:04 [main] INFO  TC_05_SearchSpecial - Current URL after special-char search: https://www.coursera.org/search?query=%40%23%24%25%5E%26*
+2026-07-07 16:20:21 [main] INFO  TC_06_BeginnerFilter - Application launched successfully
+2026-07-07 16:20:35 [main] INFO  TC_06_BeginnerFilter - Successfully filtered Beginner Level
+2026-07-07 16:20:51 [main] INFO  TC_07_EnglishFilter - Application launched successfully
+2026-07-07 16:21:04 [main] INFO  TC_07_EnglishFilter - Successfully filtered English Level
+2026-07-07 16:21:30 [main] INFO  TC_08_BothFilters - Application launched successfully
+2026-07-07 16:21:38 [main] INFO  TC_08_BothFilters - Both Beginner and English filter executed succesfully
+2026-07-07 16:21:56 [main] INFO  TC_09_ValidateCourses - Application launched successfully
+2026-07-07 16:22:12 [main] INFO  TC_09_ValidateCourses - Courses validated and - Found 12 courses
+2026-07-07 16:22:29 [main] INFO  TC_10_ExtractDetails - Application launched successfully
+2026-07-07 16:22:43 [main] INFO  TC_10_ExtractDetails - Courses details are extracted successfully
+2026-07-07 16:22:57 [main] INFO  TC_11_NavigateLanguages - Application launched successfully
+2026-07-07 16:23:33 [main] INFO  TC_11_NavigateLanguages - Successfully navigated to Language Learning page
+2026-07-07 16:23:53 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-07 16:24:25 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-07 16:24:51 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-07 16:25:25 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-07 16:25:47 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-07 16:26:17 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-07 16:26:38 [main] INFO  TC_15_GetLevels - Application launched successfully
+2026-07-07 16:27:02 [main] INFO  TC_15_GetLevels - Retrieved all the levels
+2026-07-07 16:27:22 [main] INFO  TC_16_Universities - Application launched successfully
+2026-07-07 16:27:35 [main] INFO  TC_16_Universities - Navigation to university page is validated
+2026-07-07 16:27:48 [main] INFO  TC_17_Campus - Application launched successfully
+2026-07-07 16:28:04 [main] INFO  TC_17_Campus - Courses for campus section is displayed successfully
+2026-07-07 16:28:17 [main] INFO  TC_18_PageLoad - Application launched successfully
+2026-07-07 16:28:29 [main] INFO  TC_18_PageLoad - Courses for campus is loaded successfully
+2026-07-07 16:28:41 [main] INFO  TC_19_Links - Application launched successfully
+2026-07-07 16:28:51 [main] INFO  TC_19_Links - Navigation to contact page link is working successfully
+2026-07-07 16:28:58 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-07 16:29:41 [main] INFO  TC_21_InvalidEmail - Application launched successfully
+2026-07-07 16:30:11 [main] INFO  TC_21_InvalidEmail - Validation Error : Please enter your work email address
+2026-07-07 16:30:40 [main] INFO  TC_22_EmptyEmail - Application launched successfully
+2026-07-07 16:31:05 [main] INFO  TC_22_EmptyEmail - Validation Error: Must be valid email.
+example@yourdomain.com
+2026-07-07 16:31:32 [main] INFO  Tc_23_ErrorMessageDisplay - Application launched successfully
+2026-07-07 16:32:02 [main] INFO  Tc_23_ErrorMessageDisplay - Displayed Error Message: Please enter your work email address
+2026-07-07 16:32:23 [main] INFO  TC_24_CorrectEmail - Application launched successfully
+2026-07-07 16:32:59 [main] INFO  TC_24_CorrectEmail - The form is submitted succesfully and the current URLhttps://www.coursera.org/campus/thank-you
+2026-07-07 16:33:21 [main] INFO  TC_25_SubmitButton - Application launched successfully
+2026-07-07 16:33:46 [main] INFO  TC_25_SubmitButton - Submit Button Clicked Successfully
+2026-07-07 18:30:57 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-07 18:31:09 [main] INFO  TC_12_CountLanguages - Application launched successfully
+2026-07-07 18:31:36 [main] INFO  TC_12_CountLanguages - Total languages count extracted
+2026-07-07 18:32:00 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-07 18:32:09 [main] INFO  TC_13_GetLanguages - Application launched successfully
+2026-07-07 18:32:41 [main] INFO  TC_13_GetLanguages - Retrieved all the languages
+2026-07-07 18:33:07 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-07 18:33:15 [main] INFO  TC_14_CountLevels - Application launched successfully
+2026-07-07 18:33:38 [main] INFO  TC_14_CountLevels - Total level count extracted : 4
+2026-07-08 09:22:21 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-08 09:22:28 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-08 09:23:51 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497733\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-08 09:23:58 [main] INFO  TC_20_LoadTime - Application launched successfully
