@@ -37,7 +37,6 @@ public class SearchPage extends CommonCode {
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
 
-
     private static final Pattern CARD_PATTERN = Pattern.compile(
             "★\\s*([0-9]+(?:\\.[0-9]+)?)|(\\d+\\s*-\\s*\\d+\\s*(?:Weeks|Months)|\\d+(?:\\.\\d+)?\\s*hours)"
     );

@@ -294,3 +294,18 @@ example@yourdomain.com
 2026-07-07 22:19:39 [main] INFO  Tc_23_ErrorMessageDisplay - Load Time  : 0 sec
 2026-07-07 22:19:46 [main] INFO  Tc_23_ErrorMessageDisplay -  Contact Us clicked
 2026-07-07 22:19:56 [main] INFO  TC_24_CorrectEmail - Application launched successfully
+2026-07-08 09:25:09 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-08 09:25:14 [main] INFO  TC_20_LoadTime - Application launched successfully
+2026-07-08 09:25:20 [main] INFO  TC_20_LoadTime - Campus URL : https://www.coursera.org/campus?utm_content=corp-to-landing-for-campus&utm_campaign=website&utm_medium=coursera&utm_source=header&utm_term=b-out
+2026-07-08 09:25:20 [main] INFO  TC_20_LoadTime - Title      : Online Learning Platform For Higher Education | Coursera
+2026-07-08 09:25:20 [main] INFO  TC_20_LoadTime - Load Time  : 0 sec
+2026-07-08 09:25:26 [main] INFO  TC_20_LoadTime -  Contact Us clicked
+2026-07-08 09:25:29 [main] INFO  TC_20_LoadTime - Contact Us URL   : https://www.coursera.org/campus/learn-more?utm_campaign=website&utm_content=corp-to-landing-for-campus&utm_medium=coursera&utm_source=header
+2026-07-08 09:25:29 [main] INFO  TC_20_LoadTime - Contact Us Title : Learn More About Coursera for Campus | Coursera
+2026-07-08 09:25:29 [main] INFO  TC_20_LoadTime - Load time fetched successfully
+2026-07-08 09:27:16 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\2497747\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-07-08 09:27:20 [main] INFO  TC_20_LoadTime - Application launched successfully
