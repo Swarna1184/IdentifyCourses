@@ -16,9 +16,9 @@ public class TC_15_GetLevels extends BaseTest {
         lp.navigateToLanguageLearning();
         lp.closePopupIfPresent();
         List<String> levels = lp.getLevels();
-        System.out.println("\n===== LEVELS =====");
+        logger.info("\n===== LEVELS =====");
         for(String level : levels) {
-            System.out.println(level);
+            logger.info(level);
         }
         logger.info("Retrieved all the levels");
         BaseTest.takeScreenShot(driver, "Levels");

@@ -1,10 +1,10 @@
 package org.identifycourses.tests;
+
 import basetest.BaseTest;
 import org.identifycourses.pages.HomePage;
 import org.identifycourses.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class TC_07_EnglishFilter extends BaseTest {
@@ -26,6 +26,5 @@ public class TC_07_EnglishFilter extends BaseTest {
         );
         BaseTest.takeScreenShot(driver, "EnglishFilter");
         logger.info("Successfully filtered English Level");
-
     }
 }

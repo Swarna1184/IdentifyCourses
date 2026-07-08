@@ -1,9 +1,9 @@
 package utilities;
+
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.*;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -11,26 +11,25 @@ import java.io.IOException;
 public class ExtentReportManager implements ITestListener {
     private ExtentReports extent;
     private ExtentTest test;
+
     @Override
     public void onStart(ITestContext context) {
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/reports/ExtentReport.html");
         sparkReporter.config().setDocumentTitle("Automation Report");
         sparkReporter.config().setReportName("Functional Testing");
         sparkReporter.config().setTheme(Theme.STANDARD);
-
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
         extent.setSystemInfo("Environment", "QA");
         extent.setSystemInfo("Tester", "Ajitha");
     }
-    public void onTestSuccess(ITestResult result) {
 
+    public void onTestSuccess(ITestResult result) {
         test = extent.createTest(result.getName()); // create a new enty in the report
         test.log(Status.PASS, "Test case PASSED is:" + result.getName()); // update status p/f/s
-
     }
-    public void onTestFailure(ITestResult result) {
 
+    public void onTestFailure(ITestResult result) {
         test = extent.createTest(result.getName());
         test.log(Status.FAIL, "Test case FAILED is:" + result.getName());
         test.log(Status.FAIL, "Test Case FAILED cause is: " + result.getThrowable());
@@ -45,13 +44,13 @@ public class ExtentReportManager implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         extent.flush();
-        String pathOfExtentReport=System.getProperty("user.dir") + "/reports/ExtentReport.html";
-        File extentReport=new File(pathOfExtentReport);
-        try{
+        String pathOfExtentReport = System.getProperty("user.dir") + "/reports/ExtentReport.html";
+        File extentReport = new File(pathOfExtentReport);
+        try {
             Desktop.getDesktop().browse(extentReport.toURI());
-        }catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
+
 }

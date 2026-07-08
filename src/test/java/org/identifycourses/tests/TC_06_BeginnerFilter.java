@@ -1,10 +1,10 @@
 package org.identifycourses.tests;
+
 import org.identifycourses.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
 import org.identifycourses.pages.SearchPage;
-
 import java.io.IOException;
 
 public class TC_06_BeginnerFilter extends BaseTest {

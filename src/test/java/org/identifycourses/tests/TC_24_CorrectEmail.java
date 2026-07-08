@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
-
 import java.io.IOException;
 import java.time.Duration;
 
@@ -39,7 +38,5 @@ public class TC_24_CorrectEmail extends TC_20_LoadTime {
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("thank-you"),
                 "Thank You page is not displayed");
-
-
     }
 }

@@ -113,26 +113,20 @@ public class SearchPage extends CommonCode {
     public List<Map<String, String>> getCourseDetails() {
         List<Map<String, String>> courses = new ArrayList<>();
         waitForAllElementsVisible(courseCards);
-
         int count = Math.min(2, courseCards.size());
-
         for (int i = 0; i < count; i++) {
             WebElement card = courseCards.get(i);
-
             String courseName = "N/A";
             String hours = "N/A";
             String rating = "N/A";
-
             try {
                 courseName = card.findElement(By.xpath(".//h3")).getText();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             try {
                 String cardText = card.getText();
                 Matcher matcher = CARD_PATTERN.matcher(cardText);
-
                 while (matcher.find()) {
                     if (matcher.group(1) != null) {
                         rating = matcher.group(1);
@@ -143,16 +137,13 @@ public class SearchPage extends CommonCode {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             Map<String, String> course = new HashMap<>();
             course.put("Name", courseName);
             course.put("Hours", hours);
             course.put("Rating", rating);
-
             System.out.println(course);
             courses.add(course);
         }
-
         System.out.println("Final Course List = " + courses);
         return courses;
     }

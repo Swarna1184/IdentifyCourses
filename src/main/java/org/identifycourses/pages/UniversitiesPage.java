@@ -10,9 +10,6 @@ public class UniversitiesPage extends CommonCode {
         super(driver);
     }
 
-    @FindBy(xpath = "//a[@aria-label='Coursera']")
-    WebElement courseraLogo;
-
     @FindBy(xpath = "//a[normalize-space()='For Universities']")
     WebElement forUniversitiesLink;
 
