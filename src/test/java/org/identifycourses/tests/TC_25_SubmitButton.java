@@ -29,8 +29,8 @@ public class TC_25_SubmitButton extends TC_20_LoadTime {
 
         page.selectNeeds(ConfigReader.getProperty("needs"));
         page.clickSubmit();
-        System.out.println("Submit Button Displayed : " + page.isSubmitButtonDisplayed());
-        System.out.println("Submit Button Enabled : " + page.isSubmitButtonEnabled());
+        logger.info("Submit Button Displayed : {}", page.isSubmitButtonDisplayed());
+        logger.info("Submit Button Enabled : {}", page.isSubmitButtonEnabled());
         Assert.assertTrue(
                 page.isSubmitButtonDisplayed(),
                 "Submit button is not displayed");

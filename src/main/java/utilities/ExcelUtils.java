@@ -54,6 +54,7 @@ public class ExcelUtils {
                 row.createCell(0).setCellValue(level);
                 row.createCell(1).setCellValue(count);
             }
+
             sheet.autoSizeColumn(0);
             sheet.autoSizeColumn(1);
             FileOutputStream fileOut = new FileOutputStream("Levels.xlsx");
@@ -61,6 +62,7 @@ public class ExcelUtils {
             fileOut.close();
             workbook.close();
             System.out.println("Levels written to Excel");
+
         } catch(Exception e) {
             e.printStackTrace();
         }

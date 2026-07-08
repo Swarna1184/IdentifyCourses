@@ -14,8 +14,8 @@ public class TC_18_PageLoad extends BaseTest {
         page.goToUniversitiesPage();
         String url = page.getCurrentUrl().toLowerCase();
         String title = page.getPageTitle();
-        System.out.println("Campus URL : " + url);
-        System.out.println("Title      : " + title);
+        logger.info("Campus URL : {}", url);
+        logger.info("Title      : {}", title);
         Assert.assertTrue(url.contains("campus"),
                 "Campus page URL incorrect");
         Assert.assertFalse(title.isEmpty(),

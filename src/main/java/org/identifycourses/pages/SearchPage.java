@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SearchPage extends CommonCode {
 
     public SearchPage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(xpath = "//input[@type='search' or @type='text']")
-    WebElement searchBox;
 
     @FindBy(xpath = "//button[contains(.,'Filter')]")
     WebElement filterButton;
@@ -36,6 +37,10 @@ public class SearchPage extends CommonCode {
     @FindBy(xpath = "//input[@type='checkbox']/ancestor::label[contains(.,'English')]")
     WebElement englishCheckbox;
 
+    private static final Pattern CARD_PATTERN = Pattern.compile(
+            "★\\s*([0-9]+(?:\\.[0-9]+)?)|(\\d+\\s*-\\s*\\d+\\s*(?:Weeks|Months)|\\d+(?:\\.\\d+)?\\s*hours)"
+    );
+
     private void safeClick(WebElement element) {
         try {
             clickElement(element);
@@ -43,7 +48,9 @@ public class SearchPage extends CommonCode {
             clickByJS(element);
         }
     }
+
     public void searchCourse(String course) {
+        WebElement searchBox = null;
         WebElement box = waitForVisibility(searchBox);
         box.clear();
         box.sendKeys(course);
@@ -102,48 +109,50 @@ public class SearchPage extends CommonCode {
         System.out.println("Total courses found: " + count);
         return count;
     }
+
     public List<Map<String, String>> getCourseDetails() {
         List<Map<String, String>> courses = new ArrayList<>();
         waitForAllElementsVisible(courseCards);
+
         int count = Math.min(2, courseCards.size());
+
         for (int i = 0; i < count; i++) {
             WebElement card = courseCards.get(i);
+
             String courseName = "N/A";
             String hours = "N/A";
             String rating = "N/A";
+
             try {
                 courseName = card.findElement(By.xpath(".//h3")).getText();
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             try {
                 String cardText = card.getText();
-                java.util.regex.Pattern ratingPattern =
-                        java.util.regex.Pattern.compile("★\\s*([0-9]+\\.?[0-9]*)");
-                java.util.regex.Matcher ratingMatcher =
-                        ratingPattern.matcher(cardText);
-                if (ratingMatcher.find()) {
-                    rating = ratingMatcher.group(1);
-                }
-                java.util.regex.Pattern durationPattern =
-                        java.util.regex.Pattern.compile(
-                                "(\\d+\\s*-\\s*\\d+\\s*(Weeks|Months))|(\\d+(\\.\\d+)?\\s*hours)");
-                java.util.regex.Matcher durationMatcher =
-                        durationPattern.matcher(cardText);
+                Matcher matcher = CARD_PATTERN.matcher(cardText);
 
-                if (durationMatcher.find()) {
-                    hours = durationMatcher.group();
+                while (matcher.find()) {
+                    if (matcher.group(1) != null) {
+                        rating = matcher.group(1);
+                    } else {
+                        hours = matcher.group();
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             Map<String, String> course = new HashMap<>();
             course.put("Name", courseName);
             course.put("Hours", hours);
             course.put("Rating", rating);
+
             System.out.println(course);
             courses.add(course);
         }
+
         System.out.println("Final Course List = " + courses);
         return courses;
     }
